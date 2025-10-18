@@ -68,8 +68,6 @@ import img5_3 from "./5-3.png";
 import img6_3 from "./6-3.png";
 import img2_3 from "./2-3.png";
 import img3_3 from "./3-3.png";
-import image9e02 from "./9e02.jpg";
-import image9e03 from "./9e03.jpg";
 import backGround from "./background.png";
 import bipMap7 from "./Bitmap-7.png";
 import bipMap8 from "./Bitmap-8.png";
@@ -84,10 +82,11 @@ import hoaHau3 from "./Hoahau-3.png.webp";
 import daoTao from "./DAO-TAO-2.jpg";
 import bgdt_02_1 from "./bgdt-02-1.jpg";
 import lydo6 from "./6-ly-do.png.webp";
-import itemTrain1 from "./Artboard-10.png.webp";
-import itemTrain2 from "./Artboard-11.png.webp";
-import itemTrain3 from "./dao-tao-hoc-vien-1.jpg.webp";
-import trangdaotao from "./TRANG-DAO-TAO.jpg";
+import itemTrain1 from "./Artboard-10.png.webp"
+import itemTrain2 from "./Artboard-11.png.webp"
+import itemTrain3 from "./dao-tao-hoc-vien-1.jpg.webp"
+import trangdaotao from "./TRANG-DAO-TAO.jpg"
+
 
 export const images = {
   bannerDoctor,
@@ -158,8 +157,6 @@ export const images = {
   img6_3,
   img2_3,
   img3_3,
-  image9e02,
-  image9e03,
   backGround,
   bipMap7,
   bipMap8,

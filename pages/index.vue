@@ -1,22 +1,35 @@
 <template>
   <div>
     <!-- Slider banner -->
-    <div>
+    <div class="w-full max-w-[100vw] overflow-hidden">
       <client-only>
         <SlickCarousel v-bind="settings">
           <div v-for="(item, index) in listImagesBanner" :key="index">
-            <img :src="item" alt="banner" />
+            <div class="w-full max-w-[100vw]">
+              <img :src="item" alt="banner" />
+            </div>
           </div>
         </SlickCarousel>
       </client-only>
     </div>
 
     <!-- Giới thiệu -->
-    <div class="flex md:flex-row flex-col justify-center items-center gap-5 my-10 container">
-      <img :src="images.mailisaSeminor" alt="mailisaSeminor" data-aos="fade-up" data-aos-duration="1000"
-        data-aos-delay="200" />
-      <div class="flex flex-col justify-center items-center" data-aos="fade-left" data-aos-duration="1000"
-        data-aos-delay="200">
+    <div
+      class="flex md:flex-row flex-col justify-center items-center gap-5 my-10 container"
+    >
+      <img
+        :src="images.mailisaSeminor"
+        alt="mailisaSeminor"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+      />
+      <div
+        class="flex flex-col justify-center items-center"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+      >
         <h2 class="font-bold text-gradient text-2xl">THẨM MỸ VIỆN MAILISA</h2>
         <p class="font-semibold text-primary-dark text-center">
           MAILISA – Thương hiệu thẩm mỹ hàng đầu Việt Nam
@@ -29,15 +42,26 @@
     </div>
 
     <!-- Dịch vụ nổi bật -->
-    <div :style="{ backgroundImage: `url(${images.bgService})` }" class="bg-cover bg-no-repeat bg-center">
+    <div
+      :style="{ backgroundImage: `url(${images.bgService})` }"
+      class="bg-cover bg-no-repeat bg-center"
+    >
       <div class="py-12 container">
-        <div class="flex flex-col md:flex-b justify-center items-center gap-5 my-10">
+        <div
+          class="flex flex-col md:flex-b justify-center items-center gap-5 my-10"
+        >
           <h1 class="font-bold text-white text-2xl uppercase">
             CÁC DỊCH VỤ NỔI BẬT TẠI MAILISA
           </h1>
 
-          <div class="gap-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
-            <BoxService v-for="(service, index) in listServiceFuture" :key="index" v-bind="service" />
+          <div
+            class="gap-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3"
+          >
+            <BoxService
+              v-for="(service, index) in listServiceFuture"
+              :key="index"
+              v-bind="service"
+            />
           </div>
         </div>
       </div>
@@ -47,30 +71,53 @@
     <Docter />
 
     <!-- Cơ sở vật chất -->
-    <div :style="{ backgroundImage: `url(${images.trangmoi})` }"
-      class="relative bg-cover bg-no-repeat bg-center introview">
+    <div
+      :style="{ backgroundImage: `url(${images.trangmoi})` }"
+      class="relative bg-cover bg-no-repeat bg-center introview"
+    >
       <div class="flex flex-col justify-center items-center py-10">
-        <h1 class="pt-10 font-bold text-white text-2xl text-center uppercase container" data-aos="fade-right"
-          data-aos-duration="1000" delay="200">
+        <h1
+          class="pt-10 font-bold text-white text-lg md:text-2xl px-4 text-center uppercase container"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          delay="200"
+        >
           CƠ SỞ HẠ TẦNG KHANG TRANG SẠCH ĐẸP ĐẢM BẢO 2 TỪ “THẨM MỸ”
         </h1>
-        <h1 class="font-bold text-white text-2xl text-center uppercase" data-aos="fade-right" data-aos-duration="1000"
-          delay="200">
+        <h1
+          class="font-bold text-white text-lg md:text-2xl px-4 text-center uppercase"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          delay="200"
+        >
           KHÔNG GIAN NỘI THẤT SANG TRỌNG THOÁNG MÁT ĐẠT TIÊU CHUẨN 5 SAO
         </h1>
 
-        <div class="pb-8 w-full" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <div
+          class="pb-8 w-full"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
           <client-only>
             <SlickCarousel v-bind="settingsIntroView">
-              <div v-for="(item, index) in listIntroViews" :key="index"
-                class="relative flex flex-col justify-center items-center">
+              <div
+                v-for="(item, index) in listIntroViews"
+                :key="index"
+                class="relative flex flex-col justify-center items-center"
+              >
                 <div class="p-6 w-full max-h-90">
-                  <img :src="item.image" :alt="item.title" class="rounded-lg object-cover" />
+                  <img
+                    :src="item.image"
+                    :alt="item.title"
+                    class="rounded-lg object-cover"
+                  />
                 </div>
 
                 <ButtonCustom
                   class="bottom-4 left-1/2 absolute px-4 py-3 !w-fit text-lg uppercase -translate-x-1/2 transform"
-                  :text="item.title" />
+                  :text="item.title"
+                />
               </div>
             </SlickCarousel>
           </client-only>
@@ -79,85 +126,195 @@
     </div>
 
     <!-- Khách hàng -->
-    <CustomerSection :backgroundImage="require('@/assets/imgs/bgCustomer.png')"
+    <CustomerSection
+      :backgroundImage="require('@/assets/imgs/bgCustomer.png')"
       title="CẬN CẢNH KHÁCH HÀNG LÀM DỊCH VỤ TẠI MAILISA"
-      videoUrl="https://www.youtube.com/embed/UpnOtVd36D0?si=58bioOW3rKvX9xXg" :items="[
+      videoUrl="https://www.youtube.com/embed/UpnOtVd36D0?si=58bioOW3rKvX9xXg"
+      :items="[
         { image: images.image9e02, title: 'Phun Môi Silk Lip Tại Mailisa' },
-        { image: images.image9e03, title: 'Phun Mày Đẹp Tự Nhiên Mailisa' }
+        { image: images.image9e03, title: 'Phun Mày Đẹp Tự Nhiên Mailisa' },
       ]"
-      :description="`Thành lập từ năm 1998, sau hơn 27 năm đứng vững trên thị trường, thẩm mỹ viện Mailisa hiện đã trở thành một trong những thương hiệu thẩm mỹ viện chăm sóc sắc đẹp, một địa chỉ đáng tin cậy, hội tụ đủ 6 tiêu chí: Công nghệ thẩm mỹ hiện đại, quy tụ đội ngũ bác sĩ thẩm mỹ giỏi, dịch vụ thẩm mỹ hoàn hảo. Trong suốt thời gian qua, Mailisa luôn là điểm đến chăm sóc sắc đẹp đáng tin cậy của khách hàng.`">
+      :description="`Thành lập từ năm 1998, sau hơn 27 năm đứng vững trên thị trường, thẩm mỹ viện Mailisa hiện đã trở thành một trong những thương hiệu thẩm mỹ viện chăm sóc sắc đẹp, một địa chỉ đáng tin cậy, hội tụ đủ 6 tiêu chí: Công nghệ thẩm mỹ hiện đại, quy tụ đội ngũ bác sĩ thẩm mỹ giỏi, dịch vụ thẩm mỹ hoàn hảo. Trong suốt thời gian qua, Mailisa luôn là điểm đến chăm sóc sắc đẹp đáng tin cậy của khách hàng.`"
+    >
       <template #default>
         <div class="flex flex-col items-center gap-6 mt-8 w-full">
           <HeadingTitle title="MÀU MỰC - MỸ PHẨM" />
           <HeadingTitle title="RÕ NGUỒN GỐC XUẤT XỨ ĐƯỢC BỘ Y TẾ KIỂM ĐỊNH" />
-          <img data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
-            src="@/assets/imgs/ALL-DOCTOR-MAGIC-03.png" alt="Ảnh chứng nhận" />
+          <img
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            src="@/assets/imgs/ALL-DOCTOR-MAGIC-03.png"
+            alt="Ảnh chứng nhận"
+          />
         </div>
       </template>
     </CustomerSection>
 
     <!-- Nhân viên  -->
-    <div :style="{ backgroundImage: `url(${require('@/assets/imgs/Doi-ngu-nhan-vien-1-240x300-1.png.webp')})` }"
-      class="relative bg-cover bg-no-repeat bg-center py-10 employee">
+    <div
+      :style="{
+        backgroundImage: `url(${require('@/assets/imgs/Doi-ngu-nhan-vien-1-240x300-1.png.webp')})`,
+      }"
+      class="relative bg-cover bg-no-repeat bg-center py-10 employee"
+    >
       <div class="flex flex-col justify-center items-center">
-        <h1 class="pt-10 font-bold text-white text-2xl text-center uppercase container" data-aos="fade-right"
-          data-aos-duration="1000" delay="200">
+        <h1
+          class="pt-10 font-bold text-white text-2xl text-center uppercase container"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          delay="200"
+        >
           ĐỘI NGŨ NHÂN VIÊN - CHẾ ĐỘ CHĂM SÓC HẬU MÃI TỐT
         </h1>
-        <h1 class="font-bold text-white text-2xl text-center uppercase" data-aos="fade-right" data-aos-duration="1000"
-          delay="200">
+        <h1
+          class="font-bold text-white text-2xl text-center uppercase"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          delay="200"
+        >
           CHO TỪNG KHÁCH HÀNG SAU KHI LÀM DỊCH VỤ
         </h1>
 
-        <div class="pb-8 w-full container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <div
+          class="pb-8 w-full container"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
           <client-only>
             <SlickCarousel v-bind="settingsEmployees">
-              <div v-for="(item, index) in listEmployees" :key="index"
-                class="relative flex flex-col justify-center items-center">
+              <div
+                v-for="(item, index) in listEmployees"
+                :key="index"
+                class="relative flex flex-col justify-center items-center"
+              >
                 <div class="p-6 w-full h-full">
-                  <img :src="item.image" :alt="'Ảnh nhân viên'"
-                    class="rounded-lg w-full h-[50vh] object-cover overflow-hidden" />
+                  <img
+                    :src="item.image"
+                    :alt="'Ảnh nhân viên'"
+                    class="rounded-lg w-full h-[50vh] object-cover overflow-hidden"
+                  />
                 </div>
               </div>
             </SlickCarousel>
           </client-only>
-          <div class="flex md:flex-row flex-col items-stretch gap-4 h-80 container">
+          <div
+            class="flex md:flex-row flex-col items-stretch gap-4 h-80 container"
+          >
             <div class="flex-1">
-              <iframe loading="lazy" :src="'https://www.youtube.com/embed/SP1QQrKS5ew?si=fnwsRy4x_i1ks3UT'"
-                title="YouTube video player" frameborder="0"
+              <iframe
+                loading="lazy"
+                :src="'https://www.youtube.com/embed/SP1QQrKS5ew?si=fnwsRy4x_i1ks3UT'"
+                title="YouTube video player"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                class="rounded-2xl w-full h-full"></iframe>
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                class="rounded-2xl w-full h-full"
+              ></iframe>
               <p class="mt-2 text-white text-sm text-center">
-                Tại Sao Thẩm Mỹ Viện Mailisa Tòa Nhà To Bự Nhân Viên Đông Mà Giá Lại Tốt Như Vậy
+                Tại Sao Thẩm Mỹ Viện Mailisa Tòa Nhà To Bự Nhân Viên Đông Mà Giá
+                Lại Tốt Như Vậy
               </p>
             </div>
             <div class="flex-1">
-              <iframe loading="lazy" :src="'https://www.youtube.com/embed/MBwfJptb7Bc?si=L0wHI5rwEhlr7cCC'"
-                title="YouTube video player" frameborder="0"
+              <iframe
+                loading="lazy"
+                :src="'https://www.youtube.com/embed/MBwfJptb7Bc?si=L0wHI5rwEhlr7cCC'"
+                title="YouTube video player"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                class="rounded-2xl w-full h-full"></iframe>
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                class="rounded-2xl w-full h-full"
+              ></iframe>
               <p class="mt-2 text-white text-sm text-center">
                 Thẩm Mỹ Viện Mailisa Khách Hàng Lúc Nào Cũng Đông Như Trẩy Hội
               </p>
             </div>
-
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Đăng ký -->
+    <div
+      class="flex flex-col md:flex-row items-stretch w-full container py-12 gap-6"
+    >
+      <div class="w-full flex flex-col flex-3 items-center text-center">
+        <HeadingTitle
+          title="Đăng ký nhận tư vấn ngay"
+          class="font-starcity capitalize text-2xl"
+        />
+        <img
+          :src="images.hoaHau3"
+          alt="phun mày chạm hạt sương bay"
+          class="w-full h-100 object-contain rounded-lg"
+        />
+      </div>
+
+      <div
+        class="container w-full h-auto bg-cover bg-center rounded-[1.5rem] flex-2 flex flex-col justify-center text-center"
+        :style="{ backgroundImage: `url(${images.doingunhanvien})` }"
+      >
+        <div class="p-6">
+          <h2 class="text-white text-2xl font-bold mb-12 leading-tight">
+            ĐĂNG KÝ <br />
+            NHẬN TƯ VẤN
+          </h2>
+          <form class="flex flex-col items-center space-y-4 w-full">
+            <input
+              type="text"
+              placeholder="Họ & Tên"
+              class="w-full bg-white p-2 rounded-md text-[#A55976] placeholder:text-[#A55976] text-md placeholder:!text-md"
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Số điện thoại của bạn"
+              class="w-full bg-white p-2 rounded-md text-[#A55976] placeholder:text-[#A55976] text-md placeholder:!text-md"
+              required
+            />
+            <ButtonCustom text="ĐẶT LỊCH NGAY" class="rounded-md text-2xl" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Báo chí -->
+    <div class="container px-10 py-12">
+      <HeadingTitle title="BÁO CHÍ NÓI GÌ VỀ MAILISA" />
+      <div class="w-full border border-pink-300 rounded-2xl p-4 mx-auto mt-5">
+        <client-only>
+          <SlickCarousel v-bind="settingsPress">
+            <div
+              v-for="(img, i) in pressLogos"
+              :key="i"
+              class="flex justify-center items-center px-6"
+            >
+              <img
+                :src="img"
+                :alt="`logo-${i}`"
+                class="h-[50px] w-auto object-contain mx-auto"
+              />
+            </div>
+          </SlickCarousel>
+        </client-only>
+      </div>
+    </div>
+
+    
   </div>
 </template>
 
 <script>
 import BoxService from "@/components/BoxService";
-import ButtonCustom from "@/components/ButtonCustom";
 import CustomerSection from "@/components/CustomerSection";
 import Docter from "@/components/Docter";
 import HeadingTitle from "@/components/HeadingTitle";
 import { images } from "~/assets/imgs";
-
+import ButtonCustom from "@/components/ButtonCustom";
 export default {
   components: {
     BoxService,
@@ -165,6 +322,7 @@ export default {
     Docter,
     CustomerSection,
     HeadingTitle,
+    ButtonCustom,
   },
   data() {
     return {
@@ -239,7 +397,7 @@ export default {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
       },
       settingsIntroView: {
@@ -271,7 +429,30 @@ export default {
         autoplay: true,
         autoplaySpeed: 2000,
       },
-
+      settingsPress: {
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        pauseOnHover: true,
+        responsive: [
+          { breakpoint: 1024, settings: { slidesToShow: 3 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
+          { breakpoint: 480, settings: { slidesToShow: 1 } },
+        ],
+      },
+      pressLogos: [
+        require("@/assets/imgs/Bitmap-7.png"),
+        require("@/assets/imgs/Bitmap-8.png"),
+        require("@/assets/imgs/Bitmap-9.png"),
+        require("@/assets/imgs/789.png"),
+        require("@/assets/imgs/0909.png"),
+        require("@/assets/imgs/1023.png"),
+        require("@/assets/imgs/1122.png"),
+        require("@/assets/imgs/78970.png"),
+      ],
     };
   },
 };
@@ -279,10 +460,9 @@ export default {
 
 <style scoped>
 .introview::before,
-.introview::after, 
+.introview::after,
 .employee::before,
-.employee::after
-{
+.employee::after {
   position: absolute;
   content: "";
   width: 100%;

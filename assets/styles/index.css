@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "MTD Starcity";
-  src: url("@/assets/fonts/Starcity Script.ttf") format("truetype");
+  src: url("@/assets/fonts/MTD-Lazy-Ride-Script.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -41,6 +41,12 @@
   }
 }
 
+input::placeholder {
+  color: #a55976;
+  opacity: 1; /* Firefox */
+  font-size: 0.833rem;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -56,7 +62,7 @@
 html {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
-  max-width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
 }
 

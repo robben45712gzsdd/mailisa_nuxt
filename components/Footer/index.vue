@@ -25,7 +25,7 @@
 
     <div class="mx-auto container">
       <!-- Khung chứa tiêu đề + danh sách chi nhánh -->
-      <div class="px-40 py-15 border border-white rounded-[15px]">
+      <div class="p-5 border border-white rounded-[15px]">
         <!-- Tiêu đề + nút -->
         <div class="mb-8 text-center">
           <h2 class="mb-4 font-bold text-[32px] uppercase">
@@ -41,7 +41,7 @@
         <hr class="mt-12 mb-12 border-1 border-white" />
 
         <!-- Danh sách chi nhánh -->
-        <div class="gap-x-30 gap-y-8 grid md:grid-cols-2">
+        <div class="gap-x-30 gap-y-8 grid md:grid-cols-2 p-5">
           <div v-for="(b, i) in branches" :key="i">
             <div class="flex justify-between items-center mb-5">
               <span class="font-bold text-lg uppercase">{{ b.city }}</span>
@@ -64,7 +64,7 @@
 
       <!-- Liên hệ + Logo + Thời gian làm việc -->
       <div
-        class="flex md:flex-row flex-col justify-between items-end gap-8 mt-20"
+        class="flex md:flex-row flex-col justify-between items-end gap-8"
       >
         <!-- Cột liên hệ -->
         <div
@@ -86,13 +86,9 @@
         </div>
 
         <!-- Logo trung tâm -->
-        <div class="flex flex-1 justify-center">
-          <a href="https://mailisa.com/">
-            <img
-              src="https://mailisa.com/wp-content/uploads/2024/03/logo-footer-02.png"
-              alt="Mailisa logo"
-              class="w-[200px]"
-            />
+        <div class="flex flex-1 justify-center w-full">
+          <a href="https://mailisa.com/" class="text-center flex justify-center">
+            <LogoIcon fill="#fff" class="w-[200px] h-auto" />
           </a>
         </div>
 
@@ -183,8 +179,13 @@
 </template>
 
 <script>
+import { LogoIcon } from '~/assets/icons';
+
 export default {
   name: "Footer",
+  components: {
+    LogoIcon,
+  },
   data() {
     return {
       branches: [

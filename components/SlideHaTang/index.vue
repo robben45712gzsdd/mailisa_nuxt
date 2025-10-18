@@ -5,7 +5,7 @@
     data-aos-duration="1000"
     data-aos-delay="200"
   >
-    <VueSlickCarousel v-bind="settingsIntroView">
+    <SlickCarousel v-bind="settingsIntroView">
       <div
         v-for="(item, index) in listIntroViews"
         :key="index"
@@ -24,19 +24,17 @@
           :text="item.title"
         />
       </div>
-    </VueSlickCarousel>
+    </SlickCarousel>
   </div>
 </template>
 
 <script>
-import VueSlickCarousel from "vue-slick-carousel";
-import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import { images } from "~/assets/imgs";
 import ButtonCustom from "../ButtonCustom/index.vue";
 
 export default {
   name: "SlideHaTang",
-  components: { VueSlickCarousel, ButtonCustom },
+  components: { ButtonCustom },
   props: {
     slidesToShow: {
       type: Number,
