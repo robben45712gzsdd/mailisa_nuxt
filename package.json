@@ -1,0 +1,19 @@
+{
+  "name": "mailisa",
+  "version": "1.0.0",
+  "description": "My classy Nuxt.js project",
+  "author": "manhdv2953",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "nuxt": "^2.0.0",
+    "slick-carousel": "^1.8.1",
+    "vue-slick-carousel": "^1.0.6"
+  }
+}
