@@ -20,7 +20,7 @@
         {{ title }}
       </h4>
 
-      <p class="text-[#222222] text-[12px] leading-relaxed">
+      <p v-if="description" class="text-[#222222] text-[12px] leading-relaxed">
         {{ truncatedDescription }}
       </p>
 
@@ -48,10 +48,13 @@ import { truncateText } from "@/utils/text";
 
 const props = defineProps({
   title: String,
-  description: String,
+  description: {
+    type: String,
+    default: "",
+  },
   image: String,
   link: String,
 });
 
-const truncatedDescription = truncateText(props.description, 100);
+const truncatedDescription = truncateText(props?.description, 100);
 </script>

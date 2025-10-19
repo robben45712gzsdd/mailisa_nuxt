@@ -5,7 +5,9 @@
     <!-- Image Section -->
     <div class="relative h-64 overflow-hidden">
       <img :src="image" :alt="title" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+      ></div>
     </div>
 
     <!-- Content Section -->
@@ -17,7 +19,7 @@
       </h3>
 
       <p class="font-[500] text-[#222222] text-[12px] leading-relaxed">
-        {{ description }}
+        {{ truncateText(description, 200) }}
       </p>
 
       <!-- Buttons -->
@@ -25,10 +27,10 @@
         <ButtonCustom :link="'/services/brow-couture'">
           <div class="flex items-center gap-1">
             <h4 class="uppercase">Giá Gốc</h4>
-            <span class="text-md line-through">{{ oldPrice }} Đ</span>
-            <TrendingFlatIcon class="ml-1" />
+            <span class="text-md line-through">{{ oldPrice?.toLocaleString() }} Đ</span>
+            <i class="fa-solid fa-arrow-right ml-1"></i>
             <span class="font-bold text-[#FFFF79] text-lg">
-              {{ newPrice }} Đ
+              {{ newPrice?.toLocaleString() }} Đ
             </span>
           </div>
         </ButtonCustom>
@@ -41,15 +43,12 @@
 
 <script>
 import ButtonCustom from "~/components/ButtonCustom/index.vue";
-// Thay vì MUI Icon (không có trong Vue), ta dùng icon tương tự
-// Có thể dùng thư viện heroicons hoặc fontawesome
-import { ArrowRightIcon } from "@heroicons/vue/solid";
+import { truncateText } from "~/utils/text";
 
 export default {
   name: "BoxProduction",
   components: {
     ButtonCustom,
-    TrendingFlatIcon: ArrowRightIcon, // thay icon TrendingFlatIcon
   },
   props: {
     title: String,
@@ -58,6 +57,9 @@ export default {
     oldPrice: [String, Number],
     newPrice: [String, Number],
     link: String,
+  },
+  methods: {
+    truncateText,
   },
 };
 </script>

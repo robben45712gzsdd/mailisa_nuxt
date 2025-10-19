@@ -53,7 +53,7 @@
                     $route.path !== menu.href,
                 }"
               >
-                <span class="pt-1 text-sm">{{ menu.label }}</span>
+                <span class="text-sm">{{ menu.label }}</span>
                 <i
                   v-if="menu.children"
                   font-size="small"
@@ -374,7 +374,7 @@ export default {
           children: [
             {
               label: "Tất Cả Sản Phẩm Mailisa",
-              href: "/san-pham-mailisa/",
+              href: "/allcosmetics/",
             },
           ],
         },
