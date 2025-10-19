@@ -1,19 +1,10 @@
 <template>
   <div class="mx-auto py-10 container">
-    <HeadingTitle title="CÁC DỊCH VỤ NỔI BẬT TẠI MAILISA" />
+    <HeadingTitle :title="title" />
 
-    <div
-      v-aos="'fade-up'"
-      data-aos-duration="1000"
-      class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10"
-    >
-      <BoxService
-        v-for="(item, index) in data"
-        :key="index"
-        :title="item.title"
-        :description="item.desc"
-        :image="item.img"
-      />
+    <div v-aos="'fade-up'" data-aos-duration="1000" class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
+      <BoxService v-for="(item, index) in data" :key="index" :title="item.title" :description="item.desc"
+        :image="item.img" />
     </div>
   </div>
 </template>
@@ -26,6 +17,10 @@ export default {
   name: "OutstandingService",
   components: { HeadingTitle, BoxService },
   props: {
+    title: {
+      type: String,
+      default: "CÁC DỊCH VỤ NỔI BẬT TẠI MAILISA",
+    },
     data: {
       type: Array,
       default: () => [],

@@ -1,5 +1,5 @@
 <template>
-  <div class="container px-10 py-12">
+  <div class="container px-10 py-4">
     <HeadingTitle title="BÁO CHÍ NÓI GÌ VỀ MAILISA" />
     <div class="w-full border border-pink-300 rounded-2xl p-4 mx-auto mt-5">
       <client-only>
