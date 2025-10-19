@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="flex md:flex-row flex-col items-stretch gap-4 h-80 container">
+    <div class="flex md:flex-row flex-col items-stretch gap-4 container min-h-80">
       <div class="flex-1">
         <iframe
           loading="lazy"
