@@ -6,12 +6,11 @@
     <OutstandingService :data="dataService" />
 
     <!-- Bác sĩ tư vấn -->
-    <div class="relative">
-      <img :src="images.tuvan1" alt="" />
-
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
-      >
+    <div
+      class="relative"
+      :class="'bg-[url(' + images.tuvan1 + ')] bg-no-repeat bg-center bg-cover'"
+    >
+      <div class="w-full">
         <div class="container">
           <div class="flex items-center justify-center gap-6">
             <div
@@ -68,46 +67,54 @@
     <Docter />
 
     <!-- Tiêu chuẩn -->
-    <div class="container">
+    <div class="container py-12">
       <HeadingTitle title="TRANG THIẾT BỊ, DỤNG CỤ TRONG PHÒNG PHẪU THUẬT" />
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        class="flex items-center py-10 justify-center text-center"
+        class="flex items-center py-2 justify-center text-center"
       >
         <NamSaoIcon :fill="'#e1006e'" class="w-25 h-25" />
-        <h2 class="text-primary-dark font-starcity text-6xl">
-          Đạt tiêu chuẩn
-        </h2>
+        <h2 class="text-primary-dark font-starcity text-6xl">Đạt tiêu chuẩn</h2>
         <img :src="images.NamSao" alt="" />
         <NamSaoIcon
           class="[transform:rotateY(180deg)] w-25 h-25"
           :fill="'#e1006e'"
         />
       </div>
-    </div>
 
-    <!-- Slider slick -->
-    <HeadingTitle title="ĐƯỢC BỘ Y TẾ CẤP PHÉP" />
-    <SlickCarousel v-bind="settingsIntroView">
-      <div
-        v-for="(item, index) in listIntroViews"
-        :key="index"
-        class="relative flex flex-col justify-center items-center"
-      >
-        <div class="p-6 w-full max-h-90">
-          <img
-            :src="item.image"
-            :alt="item.title"
-            class="rounded-lg object-cover"
-          />
+      <!-- Slider slick -->
+      <HeadingTitle title="ĐƯỢC BỘ Y TẾ CẤP PHÉP" />
+      <SlickCarousel v-bind="settingsIntroView">
+        <div
+          v-for="(item, index) in listIntroViews"
+          :key="index"
+          class="relative flex flex-col justify-center items-center"
+        >
+          <div class="p-6 w-full max-h-90">
+            <img
+              :src="item.image"
+              :alt="item.title"
+              class="rounded-lg object-cover"
+            />
+          </div>
         </div>
-      </div>
-    </SlickCarousel>
-
+      </SlickCarousel>
+    </div>
+    <!-- Khách hàng -->
+    <CustomerSection
+      :backgroundImage="require('@/assets/imgs/bgCustomer.png')"
+      title="CẬN CẢNH KHÁCH HÀNG LÀM DỊCH VỤ TẠI MAILISA"
+      videoUrl="https://www.youtube.com/embed/UpnOtVd36D0?si=58bioOW3rKvX9xXg"
+      :items="[
+        { image: images.image9e02, title: 'Phun Môi Silk Lip Tại Mailisa' },
+        { image: images.image9e03, title: 'Phun Mày Đẹp Tự Nhiên Mailisa' },
+      ]"
+      :description="`Thành lập từ năm 1998, sau hơn 27 năm đứng vững trên thị trường, thẩm mỹ viện Mailisa hiện đã trở thành một trong những thương hiệu thẩm mỹ viện chăm sóc sắc đẹp, một địa chỉ đáng tin cậy, hội tụ đủ 6 tiêu chí: Công nghệ thẩm mỹ hiện đại, quy tụ đội ngũ bác sĩ thẩm mỹ giỏi, dịch vụ thẩm mỹ hoàn hảo. Trong suốt thời gian qua, Mailisa luôn là điểm đến chăm sóc sắc đẹp đáng tin cậy của khách hàng.`"
+    />
     <!-- Nhân viên & video -->
     <div
-      class="bg-cover bg-center bg-no-repeat w-full h-[600px] mt-10"
+      class="bg-cover employee_surgery relative bg-center bg-no-repeat w-full h-[600px] mt-10"
       :style="{ backgroundImage: `url(${images.doingunhanvien})` }"
     >
       <div class="container py-10">
@@ -145,44 +152,10 @@
     </div>
 
     <!-- Đăng ký -->
-    <div
-      class="flex flex-wrap md:flex-nowrap items-stretch w-full max-w-7xl mx-auto mt-10 px-6 gap-6"
-    >
-      <div class="md:w-7/12 w-full flex flex-col items-center text-center">
-        <HeadingTitle title="Đăng ký nhận tư vấn ngay" />
-        <img
-          :src="images.hoaHau3"
-          alt="phun mày chạm hạt sương bay"
-          class="w-full h-auto object-contain rounded-lg"
-        />
-      </div>
+    <SignupForConsultation />
 
-      <div
-        class="container w-full h-auto bg-cover bg-center rounded-[1.5rem] py-12 flex flex-col justify-center text-center"
-        :style="{ backgroundImage: `url(${images.doingunhanvien})` }"
-      >
-        <h2 class="text-white text-2xl font-bold mb-12 leading-tight">
-          ĐĂNG KÝ <br /> NHẬN TƯ VẤN
-        </h2>
-        <form class="flex flex-col items-center space-y-4 w-full">
-          <input
-            type="text"
-            placeholder="Họ & Tên"
-            class="w-full bg-white p-4 rounded-xl text-gray-800"
-            required
-          />
-          <input
-            type="tel"
-            placeholder="Số điện thoại của bạn"
-            class="w-full bg-white p-4 rounded-xl text-gray-800"
-            required
-          />
-          <ButtonCustom>
-            ĐẶT LỊCH NGAY
-          </ButtonCustom>
-        </form>
-      </div>
-    </div>
+    <!-- Báo chí  -->
+    <NewsPress />
   </div>
 </template>
 
@@ -192,7 +165,10 @@ import { images } from "@/assets/imgs";
 import Docter from "@/components/Docter";
 import HeadingTitle from "@/components/HeadingTitle";
 import OutstandingService from "@/components/OutstandingService";
- import ButtonCustom from "@/components/ButtonCustom";
+import ButtonCustom from "@/components/ButtonCustom";
+import SignupForConsultation from "@/components/SignupForConsultation";
+import CustomerSection from "@/components/CustomerSection";
+import NewsPress from "@/components/NewsPress";
 export default {
   name: "CosmeticSurgery",
   components: {
@@ -201,6 +177,9 @@ export default {
     HeadingTitle,
     OutstandingService,
     ButtonCustom,
+    SignupForConsultation,
+    CustomerSection,
+    NewsPress,
   },
   data() {
     return {
@@ -258,6 +237,10 @@ export default {
         autoplay: true,
         arrows: false,
         autoplaySpeed: 2000,
+        responsive: [
+          { breakpoint: 1024, settings: { slidesToShow: 2 } },
+          { breakpoint: 768, settings: { slidesToShow: 1 } },
+        ],
       },
     };
   },
@@ -269,5 +252,29 @@ export default {
   width: 100%;
   height: 315px;
   border-radius: 12px;
+}
+
+.employee_surgery::before,
+.employee_surgery::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4.6875rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+}
+
+.employee_surgery::before {
+  top: -9%;
+  transform: translateX(-50%) rotate(180deg);
+  background-image: url("@/assets/imgs/pattern_new_1.png");
+}
+
+.employee_surgery::after {
+  bottom: -9%;
+  background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 </style>

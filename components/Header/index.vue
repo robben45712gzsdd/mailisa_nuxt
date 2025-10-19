@@ -35,7 +35,7 @@
       <nav
         class="hidden md:block relative mx-auto border-primary-dark border-t w-max"
       >
-        <ul class="flex items-center gap-6 p-4 font-bold uppercase">
+        <ul class="flex items-center gap-6 p-2 font-bold uppercase">
           <li
             v-for="(menu, i) in menuData"
             :key="i"
@@ -48,19 +48,20 @@
                 :to="menu.href"
                 class="group relative flex flex items-center gap-1 transition-colors duration-200"
                 :class="{
-                  'text-primary': $route.path === menu.href,
+                  'text-primary border-b-3 py-1': $route.path === menu.href,
                   'text-primary-dark hover-text-primary':
                     $route.path !== menu.href,
                 }"
               >
-                <span class="pt-1">{{ menu.label }}</span>
+                <span class="pt-1 text-sm">{{ menu.label }}</span>
                 <i
                   v-if="menu.children"
                   font-size="small"
                   class="w-4 h-4 transition-transform duration-700 ease-in-out fa-solid fa-angle-down transform"
                   :class="{
-                    'text-primary rotate-0': $route.path === menu.href,
-                    'text-primary-dark group-hover-text-primary group-hover:rotate-0 rotate-[-90deg]':
+                    'text-primary rotate-0 translate-y-1':
+                      $route.path === menu.href,
+                    'text-primary-dark group-hover-text-primary group-hover:rotate-0 rotate-[-90deg] group-hover:translate-y-1':
                       $route.path !== menu.href,
                   }"
                 />
@@ -90,11 +91,11 @@
                         $route.path !== submenu.href,
                     }"
                   >
-                    <span>{{ submenu.label }}</span>
+                    <span class="text-sm">{{ submenu.label }}</span>
                     <i
                       v-if="submenu.children"
                       font-size="small"
-                      class="w-4 h-4 rotate-[-90deg] fa-solid fa-angle-down"
+                      class="w-4 h-4 rotate-[-90deg] fa-solid fa-angle-down translate-y-1"
                       :class="{
                         'text-primary': $route.path === submenu.href,
                         'text-white': $route.path !== submenu.href,
@@ -253,7 +254,7 @@ export default {
         },
         {
           label: "Phun màu thẩm mỹ",
-          href: "/phun-mau-tham-my/",
+          href: "/SemiPermanentMakeup",
           children: [
             {
               label: "Phun Mày Brow Couture",
@@ -283,7 +284,7 @@ export default {
         },
         {
           label: "Điều trị da",
-          href: "/dieu-tri-da-tai-tham-my-vien-mailisa/",
+          href: "/SkinTreatmentPage",
           children: [
             {
               label: "Điều trị nám đinh",
@@ -319,7 +320,7 @@ export default {
         },
         {
           label: "Phẫu thuật",
-          href: "/phau-thuat-tham-my/",
+          href: "/Surgery",
           children: [
             {
               label: "Nâng cung chân mày Perfect Form",
@@ -379,7 +380,7 @@ export default {
         },
         {
           label: "Đào tạo",
-          href: "/trang-dao-tao/",
+          href: "/Training",
           children: [
             {
               label: "Chăm sóc da",

@@ -93,11 +93,11 @@
         data-aos-duration="700"
       >
         <div
-          class="flex rounded-2xl flex-wrap md:flex-nowrap items-stretch gap-10 py-7 px-12 bg-cover bg-center bg-no-repeat"
+          class="flex rounded-2xl flex-col md:flex-row items-stretch gap-6 p-6 bg-cover bg-center bg-no-repeat"
           :style="{ backgroundImage: `url(${images.backGround})` }"
         >
           <!-- Cột ảnh -->
-          <div class="md:w-7/12 w-full flex items-stretch">
+          <div class="flex-1 w-full flex items-stretch">
             <div class="img_wrap w-full">
               <img
                 src="https://mailisa.com/wp-content/uploads/2024/08/Mailisa-hang-hieu.jpg"
@@ -109,7 +109,7 @@
           </div>
 
           <!-- Cột video -->
-          <div class="w-full flex items-stretch">
+          <div class="flex-1 w-full flex items-stretch">
             <div class="iframe_wrap w-full">
               <iframe
                 src="https://www.youtube.com/embed/AviyFR-FMCY?si=SMHBdQpsvq9YFiYs"
@@ -127,26 +127,7 @@
     </div>
 
     <!-- Báo chí -->
-    <div class="container px-10 py-12">
-      <HeadingTitle title="BÁO CHÍ NÓI GÌ VỀ MAILISA" />
-      <div class="w-full border border-pink-300 rounded-2xl p-4 mx-auto mt-5">
-        <client-only>
-          <SlickCarousel v-bind="settingsPress">
-            <div
-              v-for="(img, i) in pressLogos"
-              :key="i"
-              class="flex justify-center items-center px-6"
-            >
-              <img
-                :src="img"
-                :alt="`logo-${i}`"
-                class="h-[50px] w-auto object-contain mx-auto"
-              />
-            </div>
-          </SlickCarousel>
-        </client-only>
-      </div>
-    </div>
+    <NewsPress />
   </div>
 </template>
 
@@ -154,12 +135,13 @@
 import { images } from "@/assets/imgs";
 import BoxService from "@/components/BoxService";
 import HeadingTitle from "@/components/HeadingTitle";
-
+ import NewsPress from "@/components/NewsPress";
 export default {
   name: "Cosmetics",
   components: {
     BoxService,
     HeadingTitle,
+    NewsPress,
   },
   data() {
     return {

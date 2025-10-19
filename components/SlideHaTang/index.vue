@@ -1,30 +1,54 @@
 <template>
   <div
-    class="pb-8 w-full"
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-delay="200"
+    :style="{ backgroundImage: `url(${images?.trangmoi})` }"
+    class="relative bg-cover bg-no-repeat bg-center introview"
   >
-    <SlickCarousel v-bind="settingsIntroView">
-      <div
-        v-for="(item, index) in listIntroViews"
-        :key="index"
-        class="relative flex flex-col justify-center items-center"
+    <div class="flex flex-col justify-center items-center py-10">
+      <h1
+        class="pt-10 font-bold text-white text-lg md:text-2xl px-4 text-center uppercase container"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        delay="200"
       >
-        <div class="p-6 w-full max-h-90">
-          <img
-            :src="item.image"
-            :alt="item.title"
-            class="rounded-lg object-cover"
-          />
-        </div>
+        CƠ SỞ HẠ TẦNG KHANG TRANG SẠCH ĐẸP ĐẢM BẢO 2 TỪ “THẨM MỸ”
+      </h1>
+      <h1
+        class="font-bold text-white text-lg md:text-2xl px-4 text-center uppercase"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        delay="200"
+      >
+        KHÔNG GIAN NỘI THẤT SANG TRỌNG THOÁNG MÁT ĐẠT TIÊU CHUẨN 5 SAO
+      </h1>
 
-        <ButtonCustom
-          class="bottom-4 left-1/2 absolute px-4 py-3 !w-fit text-lg uppercase -translate-x-1/2 transform"
-          :text="item.title"
-        />
+      <div
+        class="pb-8 w-full"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+      >
+        <SlickCarousel v-bind="settingsIntroView">
+          <div
+            v-for="(item, index) in listIntroViews"
+            :key="index"
+            class="relative flex flex-col justify-center items-center"
+          >
+            <div class="p-6 w-full max-h-90">
+              <img
+                :src="item.image"
+                :alt="item.title"
+                class="rounded-lg object-cover"
+              />
+            </div>
+
+            <ButtonCustom
+              class="bottom-10 left-1/2 absolute  px-4 py-3 !w-fit text-md uppercase -translate-x-1/2 transform"
+              :text="item.title"
+            />
+          </div>
+        </SlickCarousel>
       </div>
-    </SlickCarousel>
+    </div>
   </div>
 </template>
 
@@ -43,6 +67,7 @@ export default {
   },
   data() {
     return {
+      images, 
       listIntroViews: [
         { image: images.noithat4, title: "Phòng phẫu thuật" },
         { image: images.quaytuvan, title: "Quầy tư vấn" },
@@ -54,14 +79,46 @@ export default {
       settingsIntroView: {
         infinite: true,
         speed: 1000,
-        slidesToShow: this.slidesToShow,
         slidesToScroll: 1,
         centerMode: true,
         autoplay: true,
         arrows: false,
+        slidesToShow: 4,
         autoplaySpeed: 2000,
+        responsive: [
+          { breakpoint: 1280, settings: { slidesToShow: 3 } },
+          { breakpoint: 1024, settings: { slidesToShow: 2 } },
+          { breakpoint: 768, settings: { slidesToShow: 1 } },
+        ],
       },
     };
   },
 };
 </script>
+<style>
+.introview::before,
+.introview::after,
+.employee::before,
+.employee::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4.6875rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+}
+
+.introview::before {
+  top: -9%;
+  transform: translateX(-50%) rotate(180deg);
+  background-image: url("@/assets/imgs/pattern_new_1.png");
+}
+
+.introview::after {
+  bottom: -9%;
+  background-image: url("@/assets/imgs/pattern_new_1.png");
+}
+</style>
