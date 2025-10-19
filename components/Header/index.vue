@@ -394,7 +394,7 @@ export default {
         },
         {
           label: "Liên hệ",
-          href: "/dia-chi-mailisa-thong-tin-lien-he/",
+          href: "/contact/",
         },
       ],
     };
