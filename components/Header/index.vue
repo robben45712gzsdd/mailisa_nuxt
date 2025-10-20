@@ -258,7 +258,7 @@ export default {
           children: [
             {
               label: "Phun Mày Brow Couture",
-              href: "/phun-xam-tham-my/phun-may-brow-couture/",
+              href: "/SemiPermanentMakeup/BrowCouture",
             },
             {
               label: "Phun Môi SILK LIP",
