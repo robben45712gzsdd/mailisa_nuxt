@@ -46,14 +46,14 @@
             <div class="flex items-center gap-1 transition cursor-pointer">
               <nuxt-link
                 :to="menu.href"
-                class="group relative flex flex items-center gap-1 transition-colors duration-200"
+                class="group relative flex flex items-center gap-1 mb-1 transition-colors duration-200"
                 :class="{
                   'text-primary border-b-3 py-1': $route.path === menu.href,
                   'text-primary-dark hover-text-primary':
                     $route.path !== menu.href,
                 }"
               >
-                <span class="text-sm">{{ menu.label }}</span>
+                <span class="mt-1 text-sm">{{ menu.label }}</span>
                 <i
                   v-if="menu.children"
                   font-size="small"
@@ -319,7 +319,7 @@ export default {
           children: [
             {
               label: "Nâng cung chân mày Perfect Form",
-              href: "/phau-thuat-tham-my/nang-cung-chan-may/",
+              href: "/SurgeryEyebrowLift",
             },
             {
               label: "Tạo hình mắt 2 mí Perfect Line",

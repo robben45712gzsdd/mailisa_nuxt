@@ -1,14 +1,14 @@
 <template>
   <div
     @click="() => window.open(link, '_blank')"
-    class="bg-pink-50 rounded-2xl shadow-custom cursor-pointer overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-md"
+    class="bg-pink-50 shadow-custom shadow-lg hover:shadow-xl rounded-2xl max-w-md overflow-hidden transition-shadow duration-300 cursor-pointer"
   >
     <!-- Image Container -->
     <div class="relative overflow-hidden">
       <img
         :src="image"
         :alt="title"
-        class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
+        class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
       />
     </div>
 
@@ -16,13 +16,13 @@
     <div class="p-6">
       <!-- Title -->
       <h3
-        class="text-burgundy font-bold text-xl leading-tight mb-4 min-h-[3.5rem]"
+        class="mb-4 min-h-[3.5rem] font-bold text-burgundy text-xl leading-tight"
       >
         {{ truncateText(title, 100) }}
       </h3>
 
       <!-- Date and Arrow -->
-      <div class="flex items-center justify-between">
+      <div class="flex justify-between items-center">
         <span class="text-gray-600 text-sm">{{ date }}</span>
         <button
           class="text-pink-400 hover:text-pink-600 transition-colors duration-300"
@@ -87,16 +87,10 @@ export default {
 </script>
 
 <style scoped>
-.text-burgundy {
-  color: #8b1538;
-}
 
 /* Hover effect cho image */
 .overflow-hidden:hover img {
   transform: scale(1.1);
 }
 
-.shadow-custom {
-  box-shadow: 0rem 0.208rem 1.5625rem 0rem #f371bc33;
-}
 </style>

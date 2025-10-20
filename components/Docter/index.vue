@@ -81,6 +81,8 @@
         <img :src="images.BitMapMin" alt="BitMapMin" />
       </div>
     </div>
+
+    <slot />
   </div>
 </template>
 
