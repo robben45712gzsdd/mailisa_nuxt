@@ -18,12 +18,12 @@
       class="bg-cover bg-center"
       :style="{ backgroundImage: `url(${images.itemTrain3})`, height: '600px' }"
     >
-      <div class="container mt-5 py-10">
+      <div class="container mt-5 py-6 md:py-10">
         <h2 class="text-white text-center text-2xl font-bold">
           CÁC KHÓA ĐÀO TẠO TẠI MAILISA
         </h2>
         <div
-          class="gap-4 mt-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 justify-center"
+          class="gap-2 md:gap-4 mt-5 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center"
         >
           <div
             v-for="(service, index) in listServiceFuture"
@@ -43,7 +43,7 @@
 
     <!-- Slider hướng dẫn học viên -->
     <div>
-      <div class="container mt-5 py-10">
+      <div class="container mt-5 py-6 md:py-10">
         <HeadingTitle
           title="GIÁM ĐỐC MAILISA VÀ TGĐ ĐIỀU HÀNH HOÀNG KIM KHÁNH TẬN TAY HƯỚNG DẪN HỌC VIÊN"
         />
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="flex md:flex-row flex-col items-stretch gap-4 container min-h-80">
+    <div class="flex md:flex-row flex-col items-stretch gap-2 md:gap-4 container min-h-80">
       <div class="flex-1">
         <iframe
           loading="lazy"
@@ -98,7 +98,7 @@
       :style="{ backgroundImage: `url(${images.trangmoi})` }"
       class="relative bg-cover bg-no-repeat bg-center introview"
     >
-      <div class="flex flex-col justify-center items-center py-10">
+      <div class="flex flex-col justify-center items-center py-6 md:py-10">
         <h1
           class="pt-10 font-bold text-white text-lg md:text-2xl px-4 text-center uppercase container"
           data-aos="fade-right"
@@ -213,7 +213,7 @@ export default {
         autoplaySpeed: 2000,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 2 } },
-          { breakpoint: 768, settings: { slidesToShow: 1 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
         ],
       },
       pressLogos: [

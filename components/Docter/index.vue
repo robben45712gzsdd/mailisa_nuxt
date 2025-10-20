@@ -3,7 +3,7 @@
     class="bg-cover bg-no-repeat bg-center"
     :style="{ backgroundImage: `url(${images.bgDoiNguBacSy})` }"
   >
-    <div class="py-12 container">
+    <div class="py-6 md:py-12 container">
       <h1
         class="font-bold text-gradient text-white text-3xl text-center uppercase"
         data-aos="fade-right"
@@ -26,7 +26,7 @@
     </div>
 
     <!-- Danh sách chứng nhận -->
-    <div class="flex justify-between items-center gap-x-12 gap-y-4 py-8 container">
+    <div class="flex justify-between items-center gap-2 md:gap-x-12 md:gap-y-4 py-8 container">
       <div
         v-for="(certificate, index) in listCertificates"
         :key="index"
@@ -62,7 +62,7 @@
           MÁY MÓC TRANG THIẾT BỊ TIÊN TIẾN HIỆN ĐẠI
         </h1>
         <p
-          class="mt-3 text-primary-dark text-sm leading-6 tracking-wide"
+          class="mt-3 text-primary-dark text-sm leading-5 md:leading-6 tracking-wide"
         >
           Tiên phong trong lĩnh vực thẩm mỹ công nghệ cao, Mailisa liên tục
           đầu tư hệ thống trang thiết bị, máy móc cao cấp được nhập khẩu,

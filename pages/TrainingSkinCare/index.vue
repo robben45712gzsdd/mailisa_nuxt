@@ -17,7 +17,7 @@
 
 
     <div
-      :class="`bg-[url('${require('@/assets/imgs/phau-thuat-tham-my.png.webp')}')] bg-no-repeat bg-center bg-cover w-full py-10`">
+      :class="`bg-[url('${require('@/assets/imgs/phau-thuat-tham-my.png.webp')}')] bg-no-repeat bg-center bg-cover w-full py-6 md:py-10`">
       <SignupForConsultation classText="text-white"  />
     </div>
 
@@ -87,7 +87,7 @@ export default {
         autoplaySpeed: 2000,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 2 } },
-          { breakpoint: 768, settings: { slidesToShow: 1 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
         ],
       },
       pressLogos: [

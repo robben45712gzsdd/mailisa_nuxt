@@ -4,12 +4,12 @@
     <img :src="images.bannerSanPham" alt="" />
 
     <!-- Sản phẩm nổi bật -->
-    <div class="mx-auto py-10 container">
+    <div class="mx-auto py-6 md:py-10 container">
       <HeadingTitle title="sản phẩm NỔI BẬT TẠI MAILISA" />
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10"
+        class="gap-2 md:gap-6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10"
       >
         <BoxService
           v-for="(item, index) in dataService"
@@ -23,13 +23,13 @@
 
     <!-- Kết quả khách hàng -->
     <div
-      class="bg-cover bg-center bg-no-repeat w-full py-12"
+      class="bg-cover bg-center bg-no-repeat w-full py-6 md:py-12"
       :style="{
         backgroundImage: `url(${images.nhomSanPham})`,
         height: 'max-content',
       }"
     >
-      <div class="mt-10 py-10 container">
+      <div class="mt-10 py-6 md:py-10 container">
         <div class="flex flex-col justify-center items-center gap-3">
           <img :src="images.ketQuaKhachHang" alt="" />
           <h2 class="font-bold text-white text-2xl text-center">
@@ -87,7 +87,7 @@
 
       <!-- Video & hình -->
       <div
-        class="container py-12"
+        class="container py-6 md:py-12"
         data-aos="zoom-in"
         data-aos-delay="300"
         data-aos-duration="700"
@@ -204,13 +204,13 @@ export default {
         speed: 800,
         slidesToShow: 3,
         slidesToScroll: 1,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 2500,
         arrows: false,
         dots: false,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 3 } },
-          { breakpoint: 768, settings: { slidesToShow: 1 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
           { breakpoint: 480, settings: { slidesToShow: 1 } },
         ],
       },

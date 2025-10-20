@@ -3,11 +3,11 @@
     <img :src="images.bannerPhauThuat" alt="" />
 
     <!-- Dịch vụ nổi bật -->
-    <div class="py-12 w-full"
+    <div class="py-6 md:py-12 w-full"
       :class="'bg-[url(' + require('@/assets/imgs/BG-1-100.jpg.webp') + ')] bg-no-repeat bg-center bg-cover'">
       <div class="container">
         <HeadingTitle title="NHỮNG KHÁCH HÀNG NÊN SỬ DỤNG DỊCH VỤ NÂNG CUNG CHÂN MÀY" />
-        <div class="gap-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-12">
+        <div class="gap-3 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 my-12">
           <div v-for="(item, index) in dataService" :key="index" class="bg-white border-secondary rounded-lg">
             <div class="flex flex-col justify-between items-center">
               <div class="flex items-center gap-2">
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="py-12 container">
+      <div class="py-6 md:py-12 container">
         <HeadingTitle title="NHỮNG ƯU ĐIỂM KHI NÂNG CUNG CHÂN MÀY TẠI MAILISA MÀ KHÁCH HÀNG YÊU THÍCH" />
         <img src="@/assets/imgs/6uudiem.png" alt="NhỮng ưu điểm" />
       </div>
@@ -33,7 +33,7 @@
         <div class="container">
           <div class="flex md:flex-row flex-col justify-center items-center gap-10">
             <div class="col-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="300" data-aos-duration="700">
-              <div class="py-10">
+              <div class="py-6 md:py-10">
                 <img src="@/assets/imgs/nang-cung-chan-may-mailisa.jpg.webp" class="shadow-md rounded-lg"
                   alt="Bác sĩ tư vấn" />
               </div>
@@ -57,7 +57,7 @@
     <Docter>
 
       <!-- Tiêu chuẩn -->
-      <div class="py-12 container">
+      <div class="py-6 md:py-12 container">
         <HeadingTitle title="TRANG THIẾT BỊ, DỤNG CỤ TRONG PHÒNG PHẪU THUẬT" />
         <div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center items-center py-2 text-center">
           <NamSaoIcon :fill="'#e1006e'" class="w-25 h-25" />
@@ -83,7 +83,7 @@
     <SlideHaTang />
 
     <!-- Đăng ký -->
-    <div class="py-12 w-full"
+    <div class="py-6 md:py-12 w-full"
       :class="'bg-[url(' + require('@/assets/imgs/Artboard-5.png.webp') + ')] bg-no-repeat bg-center bg-cover'">
       <SignupForConsultation classText="text-secondary" />
     </div>
@@ -159,7 +159,7 @@ export default {
         autoplaySpeed: 2000,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 2 } },
-          { breakpoint: 768, settings: { slidesToShow: 1 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
         ],
       },
     };
@@ -192,23 +192,27 @@ export default {
 .employee_surgery::before {
   top: -8%;
   transform: translateX(-50%) rotate(180deg);
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 .employee_surgery::after {
   bottom: -8%;
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 .doctor::before {
   top: -8%;
   transform: translateX(-50%) rotate(180deg);
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 .doctor::after {
   bottom: -8%;
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 

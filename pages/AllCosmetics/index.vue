@@ -4,12 +4,12 @@
     <img :src="images.bannerSanPham" alt="" />
 
     <!-- Sản phẩm nổi bật -->
-    <div class="mx-auto py-10 container">
+    <div class="mx-auto py-6 md:py-10 container">
       <HeadingTitle title="SẢN PHẨM ĐƯỢC PHẨM YÊU THÍCH" />
       <div
         data-aos="fade-up"
         data-aos-duration="1000"
-        class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10"
+        class="gap-2 md:gap-6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10"
       >
         <BoxProduction
           v-for="(item, index) in dataService"
@@ -28,7 +28,7 @@
       <h2 class="text-center text-2xl font-bold">MỸ PHẨM DOCTOR MAGIC</h2>
     </div>
 
-    <div class="w-full py-12">
+    <div class="w-full py-6 md:py-12">
       <client-only>
         <SlickCarousel v-bind="settingsIntroView">
           <div v-for="(item, index) in listIntroViews" :key="index">
@@ -47,7 +47,7 @@
     <!-- Đăng ký -->
     <div
       :style="{ backgroundImage: `url(${images?.trangmoi})` }"
-      class="relative bg-cover py-12 bg-no-repeat bg-center introview"
+      class="relative bg-cover py-6 md:py-12 bg-no-repeat bg-center introview"
     >
       <SignupForConsultation :classText="'!text-white'" />
     </div>
@@ -597,7 +597,7 @@ export default {
         arrows: false,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 2 } },
-          { breakpoint: 768, settings: { slidesToShow: 1 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
           { breakpoint: 480, settings: { slidesToShow: 1 } },
         ],
       },
@@ -636,12 +636,14 @@ export default {
 .introview::before {
   top: -8%;
   transform: translateX(-50%) rotate(180deg);
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 .introview::after {
   bottom: -8%;
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 </style>

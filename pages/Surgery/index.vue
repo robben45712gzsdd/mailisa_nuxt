@@ -57,7 +57,7 @@
     <Docter />
 
     <!-- Tiêu chuẩn -->
-    <div class="py-12 container">
+    <div class="py-6 md:py-12 container">
       <HeadingTitle title="TRANG THIẾT BỊ, DỤNG CỤ TRONG PHÒNG PHẪU THUẬT" />
       <div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center items-center py-2 text-center">
         <NamSaoIcon :fill="'#e1006e'" class="w-25 h-25" />
@@ -88,12 +88,12 @@
     <!-- Nhân viên & video -->
     <div class="relative bg-cover bg-no-repeat bg-center mt-10 w-full h-[600px] employee_surgery"
       :style="{ backgroundImage: `url(${images.doingunhanvien})` }">
-      <div class="py-10 container">
+      <div class="py-6 md:py-10 container">
         <h2 class="font-bold text-white text-2xl text-center">
           ĐỘI NGŨ NHÂN VIÊN - CHẾ ĐỘ CHĂM SÓC HẬU MÃI TỐT <br />
           CHO TỪNG KHÁCH HÀNG SAU KHI LÀM DỊCH VỤ
         </h2>
-        <div class="flex gap-4 mt-6">
+        <div class="flex gap-2 md:gap-4 mt-6">
           <div class="p-4 rounded-lg w-1/2">
             <div class="iframe_wrap">
               <iframe loading="lazy" width="560" height="315"
@@ -200,7 +200,7 @@ export default {
         autoplaySpeed: 2000,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 2 } },
-          { breakpoint: 768, settings: { slidesToShow: 1 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
         ],
       },
     };
@@ -233,22 +233,26 @@ export default {
 .employee_surgery::before {
   top: -8%;
   transform: translateX(-50%) rotate(180deg);
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 .employee_surgery::after {
   bottom: -8%;
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 .doctor::before {
   top: -10%;
   transform: translateX(-50%) rotate(180deg);
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 
 .doctor::after {
   bottom: -10%;
-  background-image: url("@/assets/imgs/pattern_new_1.png");
+  background-position-x: center;
+  background-image: url("@/assets/imgs/pattern_new_1.png");;
 }
 </style>

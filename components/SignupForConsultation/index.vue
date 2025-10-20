@@ -1,7 +1,7 @@
 <template>
   <!-- Đăng ký -->
   <div
-    class="flex md:flex-row flex-col items-stretch gap-6 py-12 w-full container"
+    class="flex md:flex-row flex-col items-stretch gap-6 py-6 md:py-12 w-full container"
   >
     <div class="flex flex-col flex-3 items-center w-full text-center">
       <HeadingTitle

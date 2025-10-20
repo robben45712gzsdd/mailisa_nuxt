@@ -158,7 +158,7 @@
           </h3>
 
           <!-- Social Media Grid -->
-          <div class="grid grid-cols-2 gap-4 mb-12">
+          <div class="grid grid-cols-2 gap-2 md:gap-4 mb-12">
             <a
               href="#"
               class="flex justify-center items-center p-8 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow"

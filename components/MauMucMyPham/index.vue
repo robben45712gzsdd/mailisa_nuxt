@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="flex flex-col items-center py-10">
+    <div class="flex flex-col items-center py-6 md:py-10">
       <img
         v-aos="'fade-up'"
         data-aos-duration="1000"

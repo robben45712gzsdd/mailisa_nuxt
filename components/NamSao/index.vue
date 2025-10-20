@@ -4,7 +4,7 @@
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      class="flex items-center py-10 justify-center text-center"
+      class="flex items-center py-6 md:py-10 justify-center text-center"
     >
       <NamSaoIcon :fill="'#e1006e'" class="w-25 h-25" />
       <h2 class="text-primary-dark font-starcity text-6xl">Đạt tiêu chuẩn</h2>

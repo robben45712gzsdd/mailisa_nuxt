@@ -3,11 +3,11 @@
         <img :src="require('@/assets/imgs/2.2.-Phun-May-Brow-Couture-01.jpg')" alt="" />
 
         <!-- Dịch vụ nổi bật -->
-        <div class="mx-auto py-10 container">
+        <div class="mx-auto py-6 md:py-10 container">
             <HeadingTitle :title="title" />
 
             <div v-aos="'fade-up'" data-aos-duration="1000"
-                class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
+                class="gap-2 md:gap-6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10">
                 <BoxService v-for="(item, index) in dataService" :key="index" :title="item.title"
                     :description="item.desc" :image="item.img" />
             </div>
@@ -81,7 +81,7 @@
                 },
             ]">
             <template #default>
-                <div class="flex flex-col items-center gap-6 mt-8 w-full">
+                <div class="flex flex-col items-center gap-2 md:gap-4 w-full">
                     <HeadingTitle title="KỸ THUẬT PHA PHỐI MÀU CHUẨN TÔNG TẠO GU THẨM MỸ" />
                     <HeadingTitle title="MÀU MỰC DOCTOR MAGIC RÕ NGUỒN GỐC XUẤT XỨ, ĐƯỢC BỘ Y TẾ KIỂM NGHIỆM" />
                     <img data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"
@@ -91,11 +91,11 @@
         </CustomerSection>
 
         <!-- Kết quả khách hàng -->
-        <div class="bg-cover bg-no-repeat bg-center py-4 md:py-12 w-full" :style="{
+        <div class="bg-cover bg-no-repeat bg-center py-4 md:py-6 md:py-12 w-full" :style="{
             backgroundImage: `url(${images.nhomSanPham})`,
             height: 'max-content',
         }">
-            <div class="mt-10 py-10 container">
+            <div class="mt-10 py-6 md:py-10 container">
                 <div class="flex flex-col justify-center items-center gap-3">
                     <img :src="images.ketQuaKhachHang" alt="" />
                     <h2 class="font-bold text-white text-2xl text-center">
@@ -143,7 +143,7 @@
         </div>
 
         <!-- Video & hình -->
-        <div class="py-4 md:py-12 container" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="700">
+        <div class="py-4 md:py-6 md:py-12 container" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="700">
             <div class="flex md:flex-row flex-col items-stretch gap-6 bg-cover bg-no-repeat bg-center p-6 rounded-2xl"
                 :style="{ backgroundImage: `url(${images.backGround})` }">
                 <!-- Cột ảnh -->
@@ -174,7 +174,7 @@
             <HeadingTitle class="my-4"
                 title="ĐỘI NGŨ NHÂN VIÊN - CHẾ ĐỘ CHĂM SÓC HẬU MÃI TỐT CHO TỪNG KHÁCH HÀNG SAU KHI LÀM DỊCH VỤ" />
 
-            <div class="flex md:flex-row flex-col items-stretch gap-4 min-h-80 container">
+            <div class="flex md:flex-row flex-col items-stretch gap-2 md:gap-4 min-h-80 container">
                 <div class="flex-1">
                     <iframe loading="lazy" :src="'https://www.youtube.com/embed/RIVNqj7szjQ?si=1FqeEMLlQXGpjgv6'"
                         title="YouTube video player" frameborder="0"
@@ -197,7 +197,7 @@
                 </div>
             </div>
         </div>
-        <div class="py-4 md:py-12 w-full">
+        <div class="py-4 md:py-6 md:py-12 w-full">
             <HeadingTitle class="my-4 container" title="HÀNG NGÀY MAILISA NHẬN ĐƯỢC HÀNG TRĂM FEEDBACK KHÁCH HÀNG" />
             <client-only>
                 <SlickCarousel v-bind="settingsFbCustomer">
@@ -343,13 +343,13 @@ export default {
                 speed: 800,
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                // autoplay: true,  
+                autoplay: true,  
                 autoplaySpeed: 2500,
                 arrows: false,
                 dots: false,
                 responsive: [
                     { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                    { breakpoint: 768, settings: { slidesToShow: 1 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2 } },
                     { breakpoint: 480, settings: { slidesToShow: 1 } },
                 ],
             },
@@ -358,13 +358,13 @@ export default {
                 speed: 800,
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                // autoplay: true,
+                autoplay: true,
                 autoplaySpeed: 2500,
                 arrows: false,
                 dots: false,
                 responsive: [
                     { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                    { breakpoint: 768, settings: { slidesToShow: 1 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2 } },
                     { breakpoint: 480, settings: { slidesToShow: 1 } },
                 ],
             },
@@ -378,7 +378,7 @@ export default {
                 autoplaySpeed: 2000,
                 responsive: [
                     { breakpoint: 1024, settings: { slidesToShow: 3 } },
-                    { breakpoint: 768, settings: { slidesToShow: 1 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2 } },
                     { breakpoint: 480, settings: { slidesToShow: 1 } },
                 ],
             },

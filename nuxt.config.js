@@ -70,4 +70,8 @@ export default {
      */
     extend(config, ctx) {},
   },
+  devServer: {
+    host: '0.0.0.0', // Cho phép truy cập từ mọi IP (LAN)
+    port: 3000       // Cổng chạy server (tuỳ chỉnh)
+  }
 };
