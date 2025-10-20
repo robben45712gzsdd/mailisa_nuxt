@@ -59,17 +59,13 @@ input::placeholder {
   }
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
   max-width: 100%;
   overflow-x: hidden;
 }
 
-html, body {
-  overflow-x: hidden;
-  height: 100%;
-}
 
 
 .text-secondary {

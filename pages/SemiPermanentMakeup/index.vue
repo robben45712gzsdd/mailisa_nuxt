@@ -4,7 +4,7 @@
 
         <!-- Dịch vụ nổi bật -->
         <div class="mx-auto py-6 md:py-10 container">
-            <HeadingTitle :title="title" />
+            <HeadingTitle :title="'CÁC DỊCH VỤ NỔI BẬT TẠI MAILISA'" />
 
             <div v-aos="'fade-up'" data-aos-duration="1000"
                 class="gap-2 md:gap-6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10">
@@ -19,8 +19,8 @@
         <div class="relative"
             :class="'bg-[url(' + require('@/assets/imgs/Thiet-ke-dang.png.webp') + ')] bg-no-repeat bg-center bg-cover'">
             <div class="relative w-full design-pattern-bg">
-                <div class="container">
-                    <div class="flex justify-center items-center gap-6">
+                <div class="container py-6 md:py-12">
+                    <div class="flex justify-center items-center gap-6 flex-col-reverse md:flex-row">
                         <div class="col-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="300"
                             data-aos-duration="700">
                             <div class="img_wrap">
@@ -30,8 +30,8 @@
 
                         <div class="text-white col-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="300"
                             data-aos-duration="700">
-                            <div>
-                                <span class="flex items-center font-bold text-2xl">
+                            <div class="">
+                                <span class="flex items-center font-bold text-2xl justify-center md:justify-start">
                                     <svg width="50" height="38" viewBox="0 0 65 57" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1_500)">
@@ -54,11 +54,10 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-
                                     THIẾT KẾ DÁNG MẪU
                                 </span>
                             </div>
-                            <div>
+                            <div class="text-center md:text-start">
                                 Thời trang sang trọng đẹp tự nhiên để phù hợp với
                                 khuôn mặt của từng khách hàng
                             </div>
@@ -109,7 +108,7 @@
                 <SlickCarousel v-bind="settingsIntroView">
                     <div v-for="(item, index) in listIntroViews" :key="index" class="p-2">
                         <div
-                            class="relative flex flex-col justify-between items-center bg-white shadow-md mx-2 p-4 rounded-xl min-h-[420px]">
+                            class="relative flex flex-col justify-between items-center bg-white shadow-md mx-2 my-4 p-4 rounded-xl min-h-[420px]">
                             <!-- nhóm ảnh -->
                             <div class="flex w-full h-[220px]">
                                 <div v-for="(img, i) in item.images" :key="i" class="relative flex-1 overflow-hidden">
@@ -447,6 +446,7 @@ export default {
   transform: translateX(-50%) rotate(180deg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-x: center;
   z-index: 10;
   bottom: -8%;
   transform: translateX(-50%) rotate(180deg);
