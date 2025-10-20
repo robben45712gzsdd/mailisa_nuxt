@@ -170,3 +170,12 @@ a {
   );
   height: 0.208rem;
 }
+
+
+.text-burgundy {
+  color: #8b1538;
+}
+
+.shadow-custom {
+  box-shadow: 0rem 0.208rem 1.5625rem 0rem #f371bc33;
+}
