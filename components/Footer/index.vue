@@ -13,7 +13,7 @@
         z-index: 5;
         width: 100%;
         height: 4.6875rem;
-        background-image: url('~@/assets/imgs/pattern_new_1.png');
+        background-image: url('@/assets/imgs/pattern_new_1.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -287,6 +287,6 @@ export default {
   top: -22px;
   transform: translateX(-50%);
   background-position-x: center;
-  background-image: url("@/assets/imgs/pattern_new_1.png");;
+  background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 </style>

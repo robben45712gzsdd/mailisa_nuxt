@@ -637,13 +637,13 @@ export default {
   top: -8%;
   transform: translateX(-50%) rotate(180deg);
   background-position-x: center;
-  background-image: url("@/assets/imgs/pattern_new_1.png");;
+  background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 
 .introview::after {
   bottom: -8%;
   background-position-x: center;
-  background-image: url("@/assets/imgs/pattern_new_1.png");;
+  background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 
 </style>

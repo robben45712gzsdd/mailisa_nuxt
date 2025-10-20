@@ -115,12 +115,12 @@ export default {
   top: -9%;
   transform: translateX(-50%) rotate(180deg);
   background-position-x: center;
-  background-image: url("@/assets/imgs/pattern_new_1.png");;
+  background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 
 .introview::after {
   bottom: -9%;
   background-position-x: center;
-  background-image: url("@/assets/imgs/pattern_new_1.png");;
+  background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 </style>
