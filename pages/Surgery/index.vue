@@ -7,19 +7,19 @@
 
     <!-- Bác sĩ tư vấn -->
     <div class="relative" :class="'bg-[url(' + images.tuvan1 + ')] bg-no-repeat bg-center bg-cover'">
-      <div class="w-full">
+      <div class="w-full doctor">
         <div class="container">
-          <div class="flex items-center justify-center gap-6">
+          <div class="flex justify-center items-center gap-6">
             <div class="col-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="300" data-aos-duration="700">
               <div class="img_wrap">
                 <img :src="images.tuvan2" alt="" />
               </div>
             </div>
 
-            <div class="col-6 aos-init aos-animate text-white" data-aos="fade-left" data-aos-delay="300"
+            <div class="text-white col-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="300"
               data-aos-duration="700">
               <div>
-                <span class="text-2xl font-bold flex items-center">
+                <span class="flex items-center font-bold text-2xl">
                   <svg width="50" height="38" viewBox="0 0 65 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1_500)">
                       <path
@@ -57,13 +57,13 @@
     <Docter />
 
     <!-- Tiêu chuẩn -->
-    <div class="container py-12">
+    <div class="py-12 container">
       <HeadingTitle title="TRANG THIẾT BỊ, DỤNG CỤ TRONG PHÒNG PHẪU THUẬT" />
-      <div data-aos="fade-up" data-aos-duration="1000" class="flex items-center py-2 justify-center text-center">
+      <div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center items-center py-2 text-center">
         <NamSaoIcon :fill="'#e1006e'" class="w-25 h-25" />
-        <h2 class="text-primary-dark font-starcity text-6xl">Đạt tiêu chuẩn</h2>
+        <h2 class="font-starcity text-primary-dark text-6xl">Đạt tiêu chuẩn</h2>
         <img :src="images.NamSao" alt="" />
-        <NamSaoIcon class="[transform:rotateY(180deg)] w-25 h-25" :fill="'#e1006e'" />
+        <NamSaoIcon class="w-25 h-25 [transform:rotateY(180deg)]" :fill="'#e1006e'" />
       </div>
 
       <!-- Slider slick -->
@@ -86,22 +86,22 @@
       ]"
       :description="`Thành lập từ năm 1998, sau hơn 27 năm đứng vững trên thị trường, thẩm mỹ viện Mailisa hiện đã trở thành một trong những thương hiệu thẩm mỹ viện chăm sóc sắc đẹp, một địa chỉ đáng tin cậy, hội tụ đủ 6 tiêu chí: Công nghệ thẩm mỹ hiện đại, quy tụ đội ngũ bác sĩ thẩm mỹ giỏi, dịch vụ thẩm mỹ hoàn hảo. Trong suốt thời gian qua, Mailisa luôn là điểm đến chăm sóc sắc đẹp đáng tin cậy của khách hàng.`" />
     <!-- Nhân viên & video -->
-    <div class="bg-cover employee_surgery relative bg-center bg-no-repeat w-full h-[600px] mt-10"
+    <div class="relative bg-cover bg-no-repeat bg-center mt-10 w-full h-[600px] employee_surgery"
       :style="{ backgroundImage: `url(${images.doingunhanvien})` }">
-      <div class="container py-10">
-        <h2 class="text-white text-center text-2xl font-bold">
+      <div class="py-10 container">
+        <h2 class="font-bold text-white text-2xl text-center">
           ĐỘI NGŨ NHÂN VIÊN - CHẾ ĐỘ CHĂM SÓC HẬU MÃI TỐT <br />
           CHO TỪNG KHÁCH HÀNG SAU KHI LÀM DỊCH VỤ
         </h2>
         <div class="flex gap-4 mt-6">
-          <div class="w-1/2 p-4 rounded-lg">
+          <div class="p-4 rounded-lg w-1/2">
             <div class="iframe_wrap">
               <iframe loading="lazy" width="560" height="315"
                 src="https://www.youtube.com/embed/SP1QQrKS5ew?si=oZwMyd-OBpfM_vIC" frameborder="0"
                 allowfullscreen></iframe>
             </div>
           </div>
-          <div class="w-1/2 p-4 rounded-lg">
+          <div class="p-4 rounded-lg w-1/2">
             <div class="iframe_wrap">
               <iframe loading="lazy" width="560" height="315"
                 src="https://www.youtube.com/embed/lH1y3UZ1geU?si=nvnIQDmVbnxOFaDn" frameborder="0"
@@ -216,7 +216,9 @@ export default {
 }
 
 .employee_surgery::before,
-.employee_surgery::after {
+.employee_surgery::after,
+.doctor::before,
+.doctor::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -229,13 +231,24 @@ export default {
 }
 
 .employee_surgery::before {
-  top: -9%;
+  top: -8%;
   transform: translateX(-50%) rotate(180deg);
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 
 .employee_surgery::after {
-  bottom: -9%;
+  bottom: -8%;
+  background-image: url("@/assets/imgs/pattern_new_1.png");
+}
+
+.doctor::before {
+  top: -10%;
+  transform: translateX(-50%) rotate(180deg);
+  background-image: url("@/assets/imgs/pattern_new_1.png");
+}
+
+.doctor::after {
+  bottom: -10%;
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 </style>

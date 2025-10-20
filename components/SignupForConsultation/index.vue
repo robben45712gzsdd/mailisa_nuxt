@@ -1,27 +1,27 @@
 <template>
   <!-- Đăng ký -->
   <div
-    class="flex flex-col md:flex-row items-stretch w-full container py-12 gap-6"
+    class="flex md:flex-row flex-col items-stretch gap-6 py-12 w-full container"
   >
-    <div class="w-full flex flex-col flex-3 items-center text-center">
+    <div class="flex flex-col flex-3 items-center w-full text-center">
       <HeadingTitle
         title="Đăng ký nhận tư vấn ngay"
-        class="font-starcity capitalize text-2xl text-primary-dark"
+        class="font-starcity text-primary-dark text-2xl capitalize"
         :classText="classText"
       />
       <img
         :src="images.hoaHau3"
         alt="phun mày chạm hạt sương bay"
-        class="w-full h-100 object-contain rounded-lg"
+        class="rounded-lg w-full h-100 object-contain"
       />
     </div>
 
     <div
-      class="border border-1 border-white w-full h-auto bg-cover bg-center rounded-[1.5rem] flex-2 flex flex-col justify-center text-center"
+      class="flex flex-col flex-2 justify-center bg-cover bg-center shadow-custom border border-1 border-white rounded-[1.5rem] w-full h-auto text-center"
       :style="{ backgroundImage: `url(${images.doingunhanvien})` }"
     >
       <div class="p-6">
-        <h2 class="text-white text-2xl font-bold mb-12 leading-tight">
+        <h2 class="mb-12 font-bold text-white text-2xl leading-tight">
           ĐĂNG KÝ <br />
           NHẬN TƯ VẤN
         </h2>
@@ -29,16 +29,16 @@
           <input
             type="text"
             placeholder="Họ & Tên"
-            class="w-full bg-white p-2 rounded-md text-[#A55976] placeholder:text-[#A55976] text-md placeholder:!text-md"
+            class="bg-white p-2 rounded-md w-full text-[#A55976] text-md placeholder:!text-md placeholder:text-[#A55976]"
             required
           />
           <input
             type="tel"
             placeholder="Số điện thoại của bạn"
-            class="w-full bg-white p-2 rounded-md text-[#A55976] placeholder:text-[#A55976] text-md placeholder:!text-md"
+            class="bg-white p-2 rounded-md w-full text-[#A55976] text-md placeholder:!text-md placeholder:text-[#A55976]"
             required
           />
-          <ButtonCustom text="ĐẶT LỊCH NGAY" class="rounded-md text-2xl" />
+          <ButtonCustom text="ĐẶT LỊCH NGAY" class="border-white rounded-md text-2xl" />
         </form>
       </div>
     </div>

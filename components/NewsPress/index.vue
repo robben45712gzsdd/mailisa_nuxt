@@ -1,7 +1,7 @@
 <template>
-  <div class="container px-10 py-4">
+  <div class="my-4 px-10 py-4 container">
     <HeadingTitle title="BÁO CHÍ NÓI GÌ VỀ MAILISA" />
-    <div class="w-full border border-pink-300 rounded-2xl p-4 mx-auto mt-5">
+    <div class="mx-auto mt-5 p-4 border border-pink-300 rounded-2xl w-full">
       <client-only>
         <SlickCarousel v-bind="settingsPress">
           <div
@@ -12,7 +12,7 @@
             <img
               :src="img"
               :alt="`logo-${i}`"
-              class="h-[50px] w-auto object-contain mx-auto"
+              class="mx-auto w-auto h-[50px] object-contain"
             />
           </div>
         </SlickCarousel>
