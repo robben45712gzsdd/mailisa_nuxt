@@ -51,6 +51,22 @@
       </div>
     </div>
 
+    <div class="py-6 md:py-12">
+      <div class="flex flex-col items-center gap-6 mt-8 w-full">
+        <HeadingTitle
+          title="QUY TRÌNH PHUN MÀY BROW COUTURE ĐỘC QUYỀN TẠI MAILISA"
+        />
+        <img
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+          src="@/assets/imgs/roadmap.png"
+          alt="Ảnh chứng nhận"
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+
     <CustomerSection
       :backgroundImage="require('@/assets/imgs/bgCustomer.png')"
       title="CẬN CẢNH KHÁCH HÀNG PHUN MÀY TẠI MAILISA"

@@ -1,6 +1,6 @@
 <template>
 <header
-  class="top-0 left-0 z-50 fixed md:relative bg-white shadow-md w-full"
+  class="top-0 left-0 z-50 fixed bg-white shadow-md w-full"
   :class="{ 'h-screen overflow-y-auto': isMenuOpen }"
 >
 
