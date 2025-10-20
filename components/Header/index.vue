@@ -1,8 +1,9 @@
 <template>
-  <header
-    class="top-0 left-0 z-50 fixed md:h-auto overflow-y-scroll bg-white shadow-md w-screen overflow-x-hidden"
-    :class="{ 'h-screen': isMenuOpen }"
-  >
+<header
+  class="top-0 left-0 z-50 fixed md:relative bg-white shadow-md w-full"
+  :class="{ 'h-screen overflow-y-auto': isMenuOpen }"
+>
+
     <div class="flex flex-col items-center mx-auto px-8 container">
       <!-- Logo -->
       <div
