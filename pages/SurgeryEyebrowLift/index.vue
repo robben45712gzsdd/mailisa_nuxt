@@ -29,9 +29,9 @@
 
     <!-- Bác sĩ tư vấn -->
     <div class="relative" :class="'bg-[url(' + images.tuvan1 + ')] bg-no-repeat bg-center bg-cover'">
-      <div class="w-full doctor">
+      <div class="my-12 w-full doctor">
         <div class="container">
-          <div class="flex justify-center items-center gap-6">
+          <div class="flex md:flex-row flex-col justify-center items-center gap-10">
             <div class="col-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="300" data-aos-duration="700">
               <div class="py-10">
                 <img src="@/assets/imgs/nang-cung-chan-may-mailisa.jpg.webp" class="shadow-md rounded-lg"
@@ -42,9 +42,9 @@
             <div class="text-white col-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="300"
               data-aos-duration="700">
               <div>
-                <img src="@/assets/imgs/Asset-16.png" alt="" class="h-30">
+                <img src="@/assets/imgs/Asset-16.png" alt="" class="h-20 md:h-30 object-contain" />
               </div>
-              <div class="text-lg italic">
+              <div class="text-2xl italic">
                 Bác sĩ tư vấn, thiết kế
                 xác định lượng da dư, da chùng chảy xệ
               </div>
@@ -55,47 +55,29 @@
     </div>
 
     <Docter>
+
       <!-- Tiêu chuẩn -->
       <div class="py-12 container">
-        <HeadingTitle title="QUY TRÌNH NÂNG CUNG CHÂN MÀY PERFECT FORM" />
-        <!-- Slider slick -->
-        <HeadingTitle classText="!text-sm text-gradient" title="(Mỗi ca làm thường được thực hiện trong khoảng 15-20 phút)" />
-      </div>
+        <HeadingTitle title="TRANG THIẾT BỊ, DỤNG CỤ TRONG PHÒNG PHẪU THUẬT" />
+        <div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center items-center py-2 text-center">
+          <NamSaoIcon :fill="'#e1006e'" class="w-25 h-25" />
+          <h2 class="font-starcity text-primary-dark text-6xl">Đạt tiêu chuẩn</h2>
+          <img :src="images.NamSao" alt="" />
+          <NamSaoIcon class="w-25 h-25 [transform:rotateY(180deg)]" :fill="'#e1006e'" />
+        </div>
 
-      <div class="container">
+        <!-- Slider slick -->
+        <HeadingTitle title="ĐƯỢC BỘ Y TẾ CẤP PHÉP" />
         <SlickCarousel v-bind="settingsIntroView">
-          <div class="flex justify-center items-center p-3" v-for="_ in 6">
-            <div class="relative py-12 w-full max-w-md">
-              <!-- Step Badge -->
-              <div class="top-0 left-1/2 z-10 absolute flex justify-center -translate-x-1/2 transform">
-                <div class="relative">
-                  <div class="relative flex justify-center items-center w-32 h-32 step">
-                    <span class="z-10 pb-1 font-bold text-white text-xl">BƯỚC 1</span>
-                  </div>
-                </div>
-              </div>
-  
-              <!-- Image Card -->
-              <div class="mb-2 pr-6 rounded-3xl overflow-hidden">
-                <img src="https://mailisa.com/wp-content/uploads/2024/01/Cac-Buoc-Thuc-Hien-Cac-DV-Phau-Thuat-01.png.webp"
-                  alt="Medical consultation" class="object-cover aspect-square" />
-              </div>
-  
-              <!-- Description Arrow -->
-              <div class="-z-1 py-6 pr-10 pl-2 rounded-2xl text-white -translate-y-12 transform"
-                :class="'bg-[url(' + require('@/assets/imgs/step_arrow_d4.png') + ')]  bg-no-repeat bg-center bg-contain'">
-                <p class="pt-5 text-[12px] text-center">
-                  Bác sĩ, y tá thăm khám sức khỏe, kiểm tra tình trạng vùng chân mày và phân tích mí trên.
-                </p>
-              </div>
+          <div v-for="(item, index) in listIntroViews" :key="index"
+            class="relative flex flex-col justify-center items-center">
+            <div class="p-6 w-full max-h-90">
+              <img :src="item.image" :alt="item.title" class="rounded-lg object-cover" />
             </div>
           </div>
         </SlickCarousel>
       </div>
     </Docter>
-
-
-
 
 
     <SlideHaTang />
@@ -169,9 +151,10 @@ export default {
       settingsIntroView: {
         infinite: true,
         speed: 1000,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
-        // autoplay: true,
+        centerMode: true,
+        autoplay: true,
         arrows: false,
         autoplaySpeed: 2000,
         responsive: [
