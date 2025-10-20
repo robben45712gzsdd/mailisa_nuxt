@@ -6,7 +6,7 @@
     <div class="w-full flex flex-col flex-3 items-center text-center">
       <HeadingTitle
         title="Đăng ký nhận tư vấn ngay"
-        class="font-starcity capitalize text-2xl"
+        class="font-starcity capitalize text-2xl text-primary-dark"
         :classText="classText"
       />
       <img
