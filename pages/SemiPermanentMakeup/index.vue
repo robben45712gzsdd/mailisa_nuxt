@@ -15,12 +15,12 @@
         <!-- Bác sĩ -->
         <Docter />
 
-        <!-- Bác sĩ tư vấn -->
+        <!-- Thiết kế dáng mẫu -->
         <div class="relative"
             :class="'bg-[url(' + require('@/assets/imgs/Thiet-ke-dang.png.webp') + ')] bg-no-repeat bg-center bg-cover'">
-            <div class="w-full">
+            <div class="relative w-full design-pattern-bg">
                 <div class="container">
-                    <div class="flex items-center justify-center gap-6">
+                    <div class="flex justify-center items-center gap-6">
                         <div class="col-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="300"
                             data-aos-duration="700">
                             <div class="img_wrap">
@@ -28,10 +28,10 @@
                             </div>
                         </div>
 
-                        <div class="col-6 aos-init aos-animate text-white" data-aos="fade-left" data-aos-delay="300"
+                        <div class="text-white col-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="300"
                             data-aos-duration="700">
                             <div>
-                                <span class="text-2xl font-bold flex items-center">
+                                <span class="flex items-center font-bold text-2xl">
                                     <svg width="50" height="38" viewBox="0 0 65 57" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1_500)">
@@ -91,7 +91,7 @@
         </CustomerSection>
 
         <!-- Kết quả khách hàng -->
-        <div class="bg-cover bg-center bg-no-repeat w-full py-4 md:py-12" :style="{
+        <div class="bg-cover bg-no-repeat bg-center py-4 md:py-12 w-full" :style="{
             backgroundImage: `url(${images.nhomSanPham})`,
             height: 'max-content',
         }">
@@ -109,14 +109,14 @@
                 <SlickCarousel v-bind="settingsIntroView">
                     <div v-for="(item, index) in listIntroViews" :key="index" class="p-2">
                         <div
-                            class="relative flex flex-col justify-between items-center bg-white rounded-xl shadow-md mx-2 p-4 min-h-[420px]">
+                            class="relative flex flex-col justify-between items-center bg-white shadow-md mx-2 p-4 rounded-xl min-h-[420px]">
                             <!-- nhóm ảnh -->
                             <div class="flex w-full h-[220px]">
                                 <div v-for="(img, i) in item.images" :key="i" class="relative flex-1 overflow-hidden">
                                     <img :src="img" :alt="`${item.title} - ${getLabel(item.images.length, i)}`"
                                         class="w-full h-full object-cover" />
                                     <span
-                                        class="absolute top-1 left-1/2 -translate-x-1/2 bg-white/90 text-primary-dark text-[13px] font-semibold px-3 py-[2px] rounded-md shadow-sm w-max">
+                                        class="top-1 left-1/2 absolute bg-white/90 shadow-sm px-3 py-[2px] rounded-md w-max font-semibold text-[13px] text-primary-dark -translate-x-1/2">
                                         {{ getLabel(item.images.length, i) }}
                                     </span>
                                 </div>
@@ -124,17 +124,17 @@
 
                             <!-- tiêu đề & mô tả -->
                             <div class="mt-4 text-center">
-                                <h2 class="font-bold text-2xl text-primary-dark uppercase">
+                                <h2 class="font-bold text-primary-dark text-2xl uppercase">
                                     {{ item.title }}
                                 </h2>
-                                <p class="text-primary italic text-sm mt-1">{{ item.desc }}</p>
+                                <p class="mt-1 text-primary text-sm italic">{{ item.desc }}</p>
                             </div>
 
                             <!-- nút -->
                             <button
-                                class="flex mt-5 items-center justify-center gap-2 px-10 py-3 rounded-full bg-gradient-to-r from-[#4A0024] to-[#D94B8E] text-white font-semibold tracking-wide shadow-md hover:opacity-90 transition w-full">
+                                class="flex justify-center items-center gap-2 bg-gradient-to-r from-[#4A0024] to-[#D94B8E] hover:opacity-90 shadow-md mt-5 px-10 py-3 rounded-full w-full font-semibold text-white tracking-wide transition">
                                 <span class="uppercase">Câu chuyện</span>
-                                <span class="italic font-starcity text-white">Khách hàng</span>
+                                <span class="font-starcity text-white italic">Khách hàng</span>
                             </button>
                         </div>
                     </div>
@@ -143,25 +143,25 @@
         </div>
 
         <!-- Video & hình -->
-        <div class="container py-4 md:py-12" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="700">
-            <div class="flex rounded-2xl flex-col md:flex-row items-stretch gap-6 p-6 bg-cover bg-center bg-no-repeat"
+        <div class="py-4 md:py-12 container" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="700">
+            <div class="flex md:flex-row flex-col items-stretch gap-6 bg-cover bg-no-repeat bg-center p-6 rounded-2xl"
                 :style="{ backgroundImage: `url(${images.backGround})` }">
                 <!-- Cột ảnh -->
-                <div class="flex-1 w-full flex items-stretch">
-                    <div class="img_wrap w-full">
+                <div class="flex flex-1 items-stretch w-full">
+                    <div class="w-full img_wrap">
                         <img src="https://mailisa.com/wp-content/uploads/2024/08/Mailisa-hang-hieu.jpg"
-                            alt="Mailisa-hang-hieu" class="w-full h-full object-cover rounded-2xl" loading="lazy" />
+                            alt="Mailisa-hang-hieu" class="rounded-2xl w-full h-full object-cover" loading="lazy" />
                     </div>
                 </div>
 
                 <!-- Cột video -->
-                <div class="flex-1 w-full flex items-stretch">
-                    <div class="iframe_wrap w-full">
+                <div class="flex flex-1 items-stretch w-full">
+                    <div class="w-full iframe_wrap">
                         <iframe src="https://www.youtube.com/embed/AviyFR-FMCY?si=SMHBdQpsvq9YFiYs"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                            class="w-full h-full rounded-2xl shadow-lg"></iframe>
+                            class="shadow-lg rounded-2xl w-full h-full"></iframe>
                     </div>
                 </div>
             </div>
@@ -174,7 +174,7 @@
             <HeadingTitle class="my-4"
                 title="ĐỘI NGŨ NHÂN VIÊN - CHẾ ĐỘ CHĂM SÓC HẬU MÃI TỐT CHO TỪNG KHÁCH HÀNG SAU KHI LÀM DỊCH VỤ" />
 
-            <div class="flex md:flex-row flex-col items-stretch gap-4 container min-h-80">
+            <div class="flex md:flex-row flex-col items-stretch gap-4 min-h-80 container">
                 <div class="flex-1">
                     <iframe loading="lazy" :src="'https://www.youtube.com/embed/RIVNqj7szjQ?si=1FqeEMLlQXGpjgv6'"
                         title="YouTube video player" frameborder="0"
@@ -197,8 +197,8 @@
                 </div>
             </div>
         </div>
-        <div class="w-full py-4 md:py-12">
-            <HeadingTitle class="container my-4" title="HÀNG NGÀY MAILISA NHẬN ĐƯỢC HÀNG TRĂM FEEDBACK KHÁCH HÀNG" />
+        <div class="py-4 md:py-12 w-full">
+            <HeadingTitle class="my-4 container" title="HÀNG NGÀY MAILISA NHẬN ĐƯỢC HÀNG TRĂM FEEDBACK KHÁCH HÀNG" />
             <client-only>
                 <SlickCarousel v-bind="settingsFbCustomer">
                     <div v-for="(item, index) in listFbCustomer" :key="index"
@@ -436,3 +436,23 @@ export default {
     },
 };
 </script>
+<style>
+.design-pattern-bg::after
+ {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4.6875rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+  bottom: -8%;
+  transform: translateX(-50%) rotate(180deg);
+  background-image: url("@/assets/imgs/pattern_light.png");
+}
+
+
+
+</style>

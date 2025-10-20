@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <main class="mt-30">
+    <main class="mt-28 mb-5">
       <Nuxt />
     </main>
     <Footer />

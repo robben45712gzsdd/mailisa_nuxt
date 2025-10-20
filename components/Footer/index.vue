@@ -1,11 +1,8 @@
 <template>
-  <footer
-    class="relative mt-10 px-5 py-15 text-white"
-    :style="{
-      backgroundImage:
-        'linear-gradient(to right, #3c1026 0%, #c72d70 45.5307%, #b94880 100%)',
-    }"
-  >
+  <footer class="relative mt-10 px-5 py-15 text-white" :style="{
+    backgroundImage:
+      'linear-gradient(to right, #3c1026 0%, #c72d70 45.5307%, #b94880 100%)',
+  }">
     <style>
       footer::before {
         content: '';
@@ -23,156 +20,108 @@
       }
     </style>
 
-    <div class="mx-auto container">
-      <!-- Khung chứa tiêu đề + danh sách chi nhánh -->
-      <div class="p-5 border border-white rounded-[15px]">
-        <!-- Tiêu đề + nút -->
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 font-bold text-[32px] uppercase">
-            Địa chỉ hệ thống thẩm mỹ viện Mailisa trên toàn quốc
-          </h2>
-          <button
-            class="bg-white px-4 py-4 rounded-full font-bold text-[16px] text-primary-dark uppercase transition"
-          >
-            Toàn bộ hệ thống Mailisa
-          </button>
+    <div class="footer">
+      <div class="mx-auto container">
+        <!-- Khung chứa tiêu đề + danh sách chi nhánh -->
+        <div class="p-5 border border-white rounded-[15px]">
+          <!-- Tiêu đề + nút -->
+          <div class="mb-8 text-center">
+            <h2 class="mb-4 font-bold text-[32px] uppercase">
+              Địa chỉ hệ thống thẩm mỹ viện Mailisa trên toàn quốc
+            </h2>
+            <button
+              class="bg-white px-4 py-4 rounded-full font-bold text-[16px] text-primary-dark uppercase transition">
+              Toàn bộ hệ thống Mailisa
+            </button>
+          </div>
+
+          <hr class="mt-12 mb-12 border-1 border-white" />
+
+          <!-- Danh sách chi nhánh -->
+          <div class="gap-x-30 gap-y-8 grid md:grid-cols-2 p-5">
+            <div v-for="(b, i) in branches" :key="i">
+              <div class="flex justify-between items-center mb-5">
+                <span class="font-bold text-lg uppercase">{{ b.city }}</span>
+                <a :href="b.map" target="_blank" rel="noopener noreferrer" class="text-yellow-300 hover:underline">
+                  Xem chỉ đường
+                </a>
+              </div>
+              <p class="font-bold text-lg">{{ b.address }}</p>
+              <p class="font-bold text-lg">{{ b.license }}</p>
+              <p v-if="b.phone" class="font-bold text-lg">{{ b.phone }}</p>
+              <p v-if="b.email" class="font-bold text-lg">{{ b.email }}</p>
+            </div>
+          </div>
         </div>
 
-        <hr class="mt-12 mb-12 border-1 border-white" />
-
-        <!-- Danh sách chi nhánh -->
-        <div class="gap-x-30 gap-y-8 grid md:grid-cols-2 p-5">
-          <div v-for="(b, i) in branches" :key="i">
-            <div class="flex justify-between items-center mb-5">
-              <span class="font-bold text-lg uppercase">{{ b.city }}</span>
-              <a
-                :href="b.map"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-yellow-300 hover:underline"
-              >
-                Xem chỉ đường
+        <!-- Liên hệ + Logo + Thời gian làm việc -->
+        <div class="flex md:flex-row flex-col justify-between items-end gap-8">
+          <!-- Cột liên hệ -->
+          <div class="flex flex-2 items-center md:items-start py-[12px] pl-[30px] border-white border-t border-b">
+            <h3 class="mr-5 font-bold text-white text-lg uppercase tracking-wide">
+              Liên hệ
+            </h3>
+            <div class="flex gap-6 text-white text-lg">
+              <a href="tel:0932699299" class="hover:text-yellow-300">
+                0932 699 299
+              </a>
+              <a href="tel:0931699299" class="hover:text-yellow-300">
+                0931 699 299
               </a>
             </div>
-            <p class="font-bold text-lg">{{ b.address }}</p>
-            <p class="font-bold text-lg">{{ b.license }}</p>
-            <p v-if="b.phone" class="font-bold text-lg">{{ b.phone }}</p>
-            <p v-if="b.email" class="font-bold text-lg">{{ b.email }}</p>
           </div>
-        </div>
-      </div>
 
-      <!-- Liên hệ + Logo + Thời gian làm việc -->
-      <div
-        class="flex md:flex-row flex-col justify-between items-end gap-8"
-      >
-        <!-- Cột liên hệ -->
-        <div
-          class="flex flex-2 items-center md:items-start py-[12px] pl-[30px] border-white border-t border-b"
-        >
-          <h3
-            class="mr-5 font-bold text-white text-lg uppercase tracking-wide"
-          >
-            Liên hệ
-          </h3>
-          <div class="flex gap-6 text-white text-lg">
-            <a href="tel:0932699299" class="hover:text-yellow-300">
-              0932 699 299
+          <!-- Logo trung tâm -->
+          <div class="flex flex-1 justify-center w-full">
+            <a href="https://mailisa.com/" class="flex justify-center text-center">
+              <LogoIcon fill="#fff" class="w-[200px] h-auto" />
             </a>
-            <a href="tel:0931699299" class="hover:text-yellow-300">
-              0931 699 299
-            </a>
+          </div>
+
+          <!-- Cột thời gian làm việc -->
+          <div class="flex flex-2 items-center md:items-end py-[12px] pl-[30px] border-white border-t border-b">
+            <h3 class="mr-5 font-bold text-white text-lg uppercase tracking-wide">
+              Thời gian làm việc
+            </h3>
+            <p class="text-white text-lg">7:30 - 18:00 (Từ thứ 2 - CN)</p>
           </div>
         </div>
 
-        <!-- Logo trung tâm -->
-        <div class="flex flex-1 justify-center w-full">
-          <a href="https://mailisa.com/" class="text-center flex justify-center">
-            <LogoIcon fill="#fff" class="w-[200px] h-auto" />
-          </a>
-        </div>
+        <!-- Menu footer -->
+        <ul
+          class="relative flex flex-wrap justify-between items-center gap-x-10 gap-y-2 mt-10 font-light text-white text-xl">
+          <li v-for="(item, i) in menuFooter" :key="i" class="relative flex items-center">
+            <a :href="item.href" target="_blank" rel="noopener noreferrer"
+              class="hover-text-primary transition-colors duration-200">
+              {{ item.name }}
+            </a>
+            <span v-if="i < menuFooter.length - 1"
+              class="top-1/2 right-[-1.25rem] absolute rounded-full w-2 h-2 -translate-y-1/2" :style="{
+                backgroundImage:
+                  'linear-gradient(to right, #b99455 0%, #fbf5ab 40%, #d2ab53 67%, #bc872c 85%, #a15d25 100%)',
+              }"></span>
+          </li>
+        </ul>
 
-        <!-- Cột thời gian làm việc -->
-        <div
-          class="flex flex-2 items-center md:items-end py-[12px] pl-[30px] border-white border-t border-b"
-        >
-          <h3
-            class="mr-5 font-bold text-white text-lg uppercase tracking-wide"
-          >
-            Thời gian làm việc
+        <!-- Mạng xã hội -->
+        <div class="mt-10 text-center">
+          <h3 class="mb-4 font-bold text-white text-lg uppercase" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6)">
+            Theo dõi Mailisa
           </h3>
-          <p class="text-white text-lg">7:30 - 18:00 (Từ thứ 2 - CN)</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a v-for="(s, i) in socials" :key="i" :href="s.link" target="_blank" rel="noopener noreferrer"
+              class="hover:scale-110 transition" :title="s.name">
+              <img :src="s.icon" :alt="s.name" class="drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] w-[53px] h-[53px]" />
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- Menu footer -->
-      <ul
-        class="relative flex flex-wrap justify-between items-center gap-x-10 gap-y-2 mt-10 font-light text-white text-xl"
-      >
-        <li
-          v-for="(item, i) in menuFooter"
-          :key="i"
-          class="relative flex items-center"
-        >
-          <a
-            :href="item.href"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover-text-primary transition-colors duration-200"
-          >
-            {{ item.name }}
-          </a>
-          <span
-            v-if="i < menuFooter.length - 1"
-            class="top-1/2 right-[-1.25rem] absolute rounded-full w-2 h-2 -translate-y-1/2"
-            :style="{
-              backgroundImage:
-                'linear-gradient(to right, #b99455 0%, #fbf5ab 40%, #d2ab53 67%, #bc872c 85%, #a15d25 100%)',
-            }"
-          ></span>
-        </li>
-      </ul>
-
-      <!-- Mạng xã hội -->
-      <div class="mt-10 text-center">
-        <h3
-          class="mb-4 font-bold text-white text-lg uppercase"
-          style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6)"
-        >
-          Theo dõi Mailisa
-        </h3>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a
-            v-for="(s, i) in socials"
-            :key="i"
-            :href="s.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:scale-110 transition"
-            :title="s.name"
-          >
-            <img
-              :src="s.icon"
-              :alt="s.name"
-              class="drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] w-[53px] h-[53px]"
-            />
+        <!-- Logo bộ công thương -->
+        <div class="flex justify-center mt-8">
+          <a href="http://online.gov.vn/Home/WebDetails/54481" target="_blank" rel="noopener noreferrer">
+            <img src="@/assets/imgs/cong-thuong.png" alt="Bộ công thương" class="w-40" />
           </a>
         </div>
-      </div>
-
-      <!-- Logo bộ công thương -->
-      <div class="flex justify-center mt-8">
-        <a
-          href="http://online.gov.vn/Home/WebDetails/54481"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="@/assets/imgs/cong-thuong.png"
-            alt="Bộ công thương"
-            class="w-40"
-          />
-        </a>
       </div>
     </div>
   </footer>
@@ -323,3 +272,20 @@ export default {
   },
 };
 </script>
+
+<style>
+.footer::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4.6875rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 10;
+  top: -22px;
+  transform: translateX(-50%);
+  background-image: url("@/assets/imgs/pattern_new_1.png");
+}
+</style>

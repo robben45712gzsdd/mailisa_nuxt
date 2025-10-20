@@ -6,7 +6,7 @@
         class="relative flex justify-center items-center bg-contain bg-no-repeat bg-center w-full h-[4.5rem] text-center"
         :style="{ backgroundImage: `url(${logoBg})` }"
       >
-        <LogoIcon fill="#fff" class="md:w-[80px] w-auto h-auto" />
+        <LogoIcon fill="#fff" class="w-auto md:w-[80px] h-auto" />
         <!-- Hamburger and Actions -->
         <div
           class="top-1/2 right-0 absolute flex items-center gap-6 pr-8 -translate-y-1/2"
@@ -95,7 +95,7 @@
                     <i
                       v-if="submenu.children"
                       font-size="small"
-                      class="w-4 h-4 rotate-[-90deg] fa-solid fa-angle-down translate-y-1"
+                      class="w-4 h-4 rotate-[-90deg] translate-y-1 fa-solid fa-angle-down"
                       :class="{
                         'text-primary': $route.path === submenu.href,
                         'text-white': $route.path !== submenu.href,
@@ -238,17 +238,12 @@ export default {
           children: [
             {
               label: "LỊCH SỬ HÌNH THÀNH PHÁT TRIỂN MAILISA",
-              href: "/",
-              children: [
-                {
-                  label: "ENGLISH VERSION",
-                  href: "/history-of-mailisa-formation/",
-                },
-              ],
+              href: "/history",
+             
             },
             {
               label: "QUÁ TRÌNH THIỆN NGUYỆN MAILISA",
-              href: "/qua-trinh-thien-nguyen-mailisa/",
+              href: "/charitable/",
             },
           ],
         },
@@ -384,11 +379,11 @@ export default {
           children: [
             {
               label: "Chăm sóc da",
-              href: "/trang-dao-tao/dao-tao-cham-soc-da/",
+              href: "/TrainingSkinCare",
             },
             {
               label: "Phun màu thẩm mỹ",
-              href: "/trang-dao-tao/dao-tao-phun-mau-tham-my/",
+              href: "/TrainingSemiPermanentMakeup",
             },
           ],
         },
