@@ -55,7 +55,7 @@
                   <img
                     :src="img"
                     :alt="`${item.title} - ${getLabel(item.images.length, i)}`"
-                    class="w-full h-full object-cover"
+                    class="w-full h-full"
                   />
                   <span
                     class="absolute top-1 left-1/2 -translate-x-1/2 bg-white/90 text-primary-dark text-[13px] font-semibold px-3 py-[2px] rounded-md shadow-sm w-max"

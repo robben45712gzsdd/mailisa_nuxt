@@ -168,12 +168,13 @@ export const LogoIcon = ({ fill }) => (
   </svg>
 );
 
-export const NamSaoIcon = ({ fill }) => (
+export const NamSaoIcon = ({ fill = "#e1006e", class: className}) => (
   <svg
     width="65"
     height="57"
     viewBox="0 0 65 57"
-    fill="none"
+    fill={fill}
+    class={className}
     xmlns="http://www.w3.org/2000/svg"
   >
     <g clip-path="url(#clip0_1_500)">

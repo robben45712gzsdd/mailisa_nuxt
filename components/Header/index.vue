@@ -283,7 +283,7 @@ export default {
           children: [
             {
               label: "Điều trị nám đinh",
-              href: "/dieu-tri-da-tai-tham-my-vien-mailisa/dieu-tri-nam-dinh/",
+              href: "/SkinTreatmentPage/MelasmaTreatment",
             },
             {
               label: "Điều trị nám mảng",
