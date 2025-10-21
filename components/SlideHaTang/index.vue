@@ -3,7 +3,7 @@
     :style="{ backgroundImage: `url(${images?.trangmoi})` }"
     class="relative bg-cover bg-no-repeat bg-center introview"
   >
-    <div class="flex flex-col justify-center items-center py-10">
+    <div class="flex flex-col justify-center items-center py-6 md:py-10">
       <h1
         class="pt-10 font-bold text-white text-lg md:text-2xl px-4 text-center uppercase container"
         data-aos="fade-right"
@@ -114,11 +114,13 @@ export default {
 .introview::before {
   top: -9%;
   transform: translateX(-50%) rotate(180deg);
+  background-position-x: center;
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 
 .introview::after {
   bottom: -9%;
+  background-position-x: center;
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 </style>

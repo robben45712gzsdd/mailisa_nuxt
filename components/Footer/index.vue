@@ -13,7 +13,7 @@
         z-index: 5;
         width: 100%;
         height: 4.6875rem;
-        background-image: url('~@/assets/imgs/pattern_new_1.png');
+        background-image: url('@/assets/imgs/pattern_new_1.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -55,7 +55,7 @@
         </div>
 
         <!-- Liên hệ + Logo + Thời gian làm việc -->
-        <div class="flex md:flex-row flex-col justify-between items-end gap-8">
+        <div class="flex md:flex-row flex-col justify-between my-3 items-center md:items-end gap-8">
           <!-- Cột liên hệ -->
           <div class="flex flex-2 items-center md:items-start py-[12px] pl-[30px] border-white border-t border-b">
             <h3 class="mr-5 font-bold text-white text-lg uppercase tracking-wide">
@@ -108,7 +108,7 @@
           <h3 class="mb-4 font-bold text-white text-lg uppercase" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6)">
             Theo dõi Mailisa
           </h3>
-          <div class="flex flex-wrap justify-center gap-4">
+          <div class="flex flex-wrap justify-center gap-2 md:gap-4">
             <a v-for="(s, i) in socials" :key="i" :href="s.link" target="_blank" rel="noopener noreferrer"
               class="hover:scale-110 transition" :title="s.name">
               <img :src="s.icon" :alt="s.name" class="drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] w-[53px] h-[53px]" />
@@ -286,6 +286,7 @@ export default {
   z-index: 10;
   top: -22px;
   transform: translateX(-50%);
+  background-position-x: center;
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 </style>

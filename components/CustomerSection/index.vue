@@ -3,7 +3,7 @@
     class="bg-cover bg-no-repeat bg-center"
     :style="{ backgroundImage: `url(${backgroundImage})` }"
   >
-    <div class="py-12 container">
+    <div class="py-6 md:py-12 container">
       <HeadingTitle :title="title" />
 
       <!-- Nội dung chính -->
@@ -33,7 +33,7 @@
           >
             <img :src="item.image" :alt="item.title" class="rounded-lg" />
             <p
-              class="mt-4 font-bold text-primary-dark text-sm text-center leading-6 tracking-wide"
+              class="mt-4 font-bold text-primary-dark text-sm text-center leading-5 md:leading-6 tracking-wide"
             >
               {{ item.title }}
             </p>
@@ -45,7 +45,7 @@
       <!-- Mô tả -->
       <p
         v-if="description"
-        class="mt-10 font-[500] text-md text-primary-dark leading-6 tracking-wide"
+        class="mt-10 font-[500] text-md text-primary-dark leading-5 md:leading-6 tracking-wide"
       >
         {{ description }}
       </p>

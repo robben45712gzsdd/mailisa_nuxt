@@ -13,7 +13,7 @@
 
     <!-- Slider hướng dẫn học viên -->
     <div>
-      <div class="mt-5 py-10 container">
+      <div class="mt-5 py-6 md:py-10 container">
         <HeadingTitle title="GIÁM ĐỐC MAILISA VÀ TGĐ ĐIỀU HÀNH HOÀNG KIM KHÁNH TẬN TAY HƯỚNG DẪN HỌC VIÊN" />
 
         <div class="mt-10">
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="flex md:flex-row flex-col items-stretch gap-4 mb-12 pb-12 min-h-80 container">
+    <div class="flex md:flex-row flex-col items-stretch gap-2 md:gap-4 mb-12 pb-12 min-h-80 container">
       <div class="flex-1">
         <iframe loading="lazy" :src="'https://www.youtube.com/embed/6VI5kHwWxAY?si=d7yzrAwDpUk7Ehla'"
           title="YouTube video player" frameborder="0"
@@ -48,7 +48,7 @@
     </div>
 
     <div
-      :class="`bg-[url('${require('@/assets/imgs/phau-thuat-tham-my.png.webp')}')] bg-no-repeat bg-center my-10 bg-cover w-full py-10`">
+      :class="`bg-[url('${require('@/assets/imgs/phau-thuat-tham-my.png.webp')}')] bg-no-repeat bg-center my-10 bg-cover w-full py-6 md:py-10`">
       <SignupForConsultation classText="text-white"  />
     </div>
 
@@ -118,7 +118,7 @@ export default {
         autoplaySpeed: 2000,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 2 } },
-          { breakpoint: 768, settings: { slidesToShow: 1 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
         ],
       },
       pressLogos: [

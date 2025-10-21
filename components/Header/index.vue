@@ -1,5 +1,9 @@
 <template>
-  <header class="top-0 left-0 z-50 fixed bg-white shadow-md w-full">
+<header
+  class="top-0 left-0 z-50 fixed bg-white shadow-md w-full"
+  :class="{ 'h-screen overflow-y-auto': isMenuOpen }"
+>
+
     <div class="flex flex-col items-center mx-auto px-8 container">
       <!-- Logo -->
       <div
@@ -9,21 +13,21 @@
         <LogoIcon fill="#fff" class="w-auto md:w-[80px] h-auto" />
         <!-- Hamburger and Actions -->
         <div
-          class="top-1/2 right-0 absolute flex items-center gap-6 pr-8 -translate-y-1/2"
+          class="top-1/2 right-0 absolute flex items-center gap-6 pr-4 -translate-y-1/2"
         >
-          <div class="hidden md:flex items-center gap-4">
-            <nuxt-link
+          <div class="hidden md:flex items-center gap-2 md:gap-4">
+            <a
               to="/login"
               class="font-bold text-primary-dark hover:text-primary uppercase transition-colors duration-200"
             >
               Đăng nhập
-            </nuxt-link>
-            <nuxt-link
+            </a>
+            <a
               to="/signup"
               class="bg-primary hover:bg-primary-dark px-4 py-2 rounded font-bold text-white uppercase transition-colors duration-200"
             >
               Đăng ký
-            </nuxt-link>
+            </a>
           </div>
           <button @click="toggleMenu" class="md:hidden block text-primary-dark">
             <i class="text-2xl fa-solid fa-bars"></i>
@@ -44,8 +48,8 @@
             @mouseleave="closeMenus"
           >
             <div class="flex items-center gap-1 transition cursor-pointer">
-              <nuxt-link
-                :to="menu.href"
+              <a
+                :href="menu.href"
                 class="group relative flex flex items-center gap-1 mb-1 transition-colors duration-200"
                 :class="{
                   'text-primary border-b-3 py-1': $route.path === menu.href,
@@ -65,7 +69,7 @@
                       $route.path !== menu.href,
                   }"
                 />
-              </nuxt-link>
+              </a>
             </div>
 
             <!-- Submenu -->
@@ -82,8 +86,8 @@
                 @mouseleave="openSubMenu = null"
               >
                 <div class="flex justify-between items-center">
-                  <nuxt-link
-                    :to="submenu.href"
+                  <a
+                    :href="submenu.href"
                     class="flex justify-between items-center w-full transition-colors duration-200"
                     :class="{
                       'text-primary': $route.path === submenu.href,
@@ -101,7 +105,7 @@
                         'text-white': $route.path !== submenu.href,
                       }"
                     />
-                  </nuxt-link>
+                  </a>
                 </div>
 
                 <!-- Sub-submenu -->
@@ -111,15 +115,15 @@
                   class="top-0 left-full absolute shadow-lg px-4 py-2 border border-gray-100 rounded-md w-56 animate-fade-in"
                 >
                   <li v-for="(child, k) in submenu.children" :key="k">
-                    <nuxt-link
-                      :to="child.href"
+                    <a
+                      :href="child.href"
                       class="text-white hover:text-yellow-400 transition-colors duration-200"
                       :class="{
                         'text-primary': $route.path === child.href,
                       }"
                     >
                       {{ child.label }}
-                    </nuxt-link>
+                    </a>
                   </li>
                 </ul>
               </li>
@@ -133,57 +137,77 @@
         <ul class="flex flex-col">
           <li v-for="(menu, i) in menuData" :key="i">
             <template v-if="!menu.children">
-              <nuxt-link
-                :to="menu.href"
+              <!-- Menu không con thì bình thường -->
+              <a
+                :href="menu.href"
                 @click="toggleMenu"
                 class="block p-4 border-b font-bold text-primary-dark hover:text-primary uppercase"
               >
                 {{ menu.label }}
-              </nuxt-link>
+              </a>
             </template>
             <template v-else>
-              <nuxt-link
-                :to="menu.href"
-                class="flex justify-between items-center p-4 border-b font-bold text-primary-dark hover:text-primary uppercase cursor-pointer"
-                @click.native="toggleOpenMenu(i)"
-              >
-                <span>{{ menu.label }}</span>
-                <i
-                  class="transition-transform fa-solid fa-angle-down"
-                  :class="{ 'rotate-180': openMenu === i }"
-                ></i>
-              </nuxt-link>
+              <div class="flex justify-between items-center border-b">
+                <!-- Chữ: đi thẳng -->
+                <a
+                  :href="menu.href"
+                  class="flex-1 p-4 font-bold text-primary-dark hover:text-primary uppercase"
+                  @click="toggleMenu"
+                >
+                  {{ menu.label }}
+                </a>
+                <!-- Icon: mở dropdown -->
+                <button
+                  @click.prevent="toggleOpenMenu(i)"
+                  class="p-4 text-primary-dark"
+                >
+                  <i
+                    class="transition-transform fa-solid fa-angle-down"
+                    :class="{ 'rotate-180': openMenu === i }"
+                  ></i>
+                </button>
+              </div>
+
+              <!-- Dropdown -->
               <ul v-show="openMenu === i" class="bg-gray-50">
                 <li v-for="(submenu, j) in menu.children" :key="j">
                   <template v-if="!submenu.children">
-                    <nuxt-link
-                      :to="submenu.href"
+                    <a
+                      :href="submenu.href"
                       @click="toggleMenu"
                       class="block p-4 border-b text-primary-dark hover:text-primary"
                     >
                       {{ submenu.label }}
-                    </nuxt-link>
+                    </a>
                   </template>
                   <template v-else>
-                    <div
-                      @click="toggleOpenSubMenu(j)"
-                      class="flex justify-between items-center p-4 border-b text-primary-dark hover:text-primary cursor-pointer"
-                    >
-                      <span>{{ submenu.label }}</span>
-                      <i
-                        class="transition-transform fa-solid fa-angle-down"
-                        :class="{ 'rotate-180': openSubMenu === j }"
-                      ></i>
+                    <div class="flex justify-between items-center border-b">
+                      <a
+                        :href="submenu.href"
+                        class="flex-1 p-4 text-primary-dark hover:text-primary"
+                        @click="toggleMenu"
+                      >
+                        {{ submenu.label }}
+                      </a>
+                      <button
+                        @click.prevent="toggleOpenSubMenu(j)"
+                        class="p-4 text-primary-dark"
+                      >
+                        <i
+                          class="transition-transform fa-solid fa-angle-down"
+                          :class="{ 'rotate-180': openSubMenu === j }"
+                        ></i>
+                      </button>
                     </div>
                     <ul v-show="openSubMenu === j" class="bg-gray-100 pl-4">
                       <li v-for="(child, k) in submenu.children" :key="k">
-                        <nuxt-link
-                          :to="child.href"
+                        <a
+                          :href="child.href"
                           @click="toggleMenu"
                           class="block p-4 border-b text-primary-dark hover:text-primary"
                         >
                           {{ child.label }}
-                        </nuxt-link>
+                        </a>
                       </li>
                     </ul>
                   </template>
@@ -192,23 +216,6 @@
             </template>
           </li>
         </ul>
-        <!-- Mobile Actions -->
-        <div class="flex flex-col gap-2 p-4">
-          <nuxt-link
-            to="/login"
-            @click="toggleMenu"
-            class="block p-4 border-b font-bold text-primary-dark hover:text-primary text-center uppercase"
-          >
-            Đăng nhập
-          </nuxt-link>
-          <nuxt-link
-            to="/signup"
-            @click="toggleMenu"
-            class="bg-primary hover:bg-primary-dark px-4 py-2 rounded font-bold text-white text-center uppercase"
-          >
-            Đăng ký
-          </nuxt-link>
-        </div>
       </nav>
     </div>
   </header>
@@ -239,7 +246,6 @@ export default {
             {
               label: "LỊCH SỬ HÌNH THÀNH PHÁT TRIỂN MAILISA",
               href: "/history",
-             
             },
             {
               label: "QUÁ TRÌNH THIỆN NGUYỆN MAILISA",

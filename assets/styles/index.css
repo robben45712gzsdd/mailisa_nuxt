@@ -59,12 +59,14 @@ input::placeholder {
   }
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
   max-width: 100%;
   overflow-x: hidden;
 }
+
+
 
 .text-secondary {
   color: var(--color-text-secondary);
@@ -132,10 +134,12 @@ a {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
-
+iframe {
+  min-height: 15rem;
+}
 *::-webkit-scrollbar {
   width: 7px;
   height: 2px;
@@ -171,11 +175,32 @@ a {
   height: 0.208rem;
 }
 
-
 .text-burgundy {
   color: #8b1538;
 }
 
 .shadow-custom {
   box-shadow: 0rem 0.208rem 1.5625rem 0rem #f371bc33;
+}
+
+/* responsive cho text  */
+@media (max-width: 768px) {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  span,
+  li,
+  ul,
+  label,
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 1rem;
+  }
 }

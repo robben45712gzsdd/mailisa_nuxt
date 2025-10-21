@@ -25,6 +25,7 @@
 import HeadingTitle from "@/components/HeadingTitle";
 export default {
   name: "NewsPress",
+  components: { HeadingTitle },
   data() {
     return {
 

@@ -15,29 +15,41 @@
 
     <!-- Giới thiệu -->
     <div
-      class="flex md:flex-row flex-col justify-center items-center gap-5 my-10 container"
+      class="flex md:flex-row flex-col-reverse justify-center items-center gap-5 my-10 container"
     >
-      <img
-        :src="images.mailisaSeminor"
-        alt="mailisaSeminor"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="200"
-      />
+      <div class="flex">
+        <img
+          :src="images.mailisaSeminor"
+          alt="mailisaSeminor"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+          class="w-1/2 md:w-full object-contain"
+        />
+        <img
+          :src="images.born1998"
+          alt="mailisaSeminor"
+          class="w-1/2 md:w-full object-contain flex md:hidden"
+        />
+      </div>
       <div
         class="flex flex-col justify-center items-center"
         data-aos="fade-left"
         data-aos-duration="1000"
         data-aos-delay="200"
       >
-        <h2 class="font-bold text-gradient text-2xl">THẨM MỸ VIỆN MAILISA</h2>
+        <h2 class="font-bold text-gradient text-4xl md:text-3xl">THẨM MỸ VIỆN MAILISA</h2>
         <p class="font-semibold text-primary-dark text-center">
           MAILISA – Thương hiệu thẩm mỹ hàng đầu Việt Nam
         </p>
         <p class="mb-2 font-semibold text-primary-dark text-center">
           27 năm – Mang đến cho bạn vẻ đẹp tự nhiên
         </p>
-        <img :src="images.born1998" alt="mailisaSeminor" />
+        <img
+          :src="images.born1998"
+          alt="mailisaSeminor"
+          class="hidden md:block object-contain"
+        />
       </div>
     </div>
 
@@ -46,7 +58,7 @@
       :style="{ backgroundImage: `url(${images.bgService})` }"
       class="bg-cover bg-no-repeat bg-center"
     >
-      <div class="py-12 container">
+      <div class="py-6 md:py-12 container">
         <div
           class="flex flex-col md:flex-b justify-center items-center gap-5 my-10"
         >
@@ -55,7 +67,7 @@
           </h1>
 
           <div
-            class="gap-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3"
+            class="gap-2 md:gap-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
           >
             <BoxService
               v-for="(service, index) in listServiceFuture"
@@ -85,7 +97,7 @@
       :description="`Thành lập từ năm 1998, sau hơn 27 năm đứng vững trên thị trường, thẩm mỹ viện Mailisa hiện đã trở thành một trong những thương hiệu thẩm mỹ viện chăm sóc sắc đẹp, một địa chỉ đáng tin cậy, hội tụ đủ 6 tiêu chí: Công nghệ thẩm mỹ hiện đại, quy tụ đội ngũ bác sĩ thẩm mỹ giỏi, dịch vụ thẩm mỹ hoàn hảo. Trong suốt thời gian qua, Mailisa luôn là điểm đến chăm sóc sắc đẹp đáng tin cậy của khách hàng.`"
     >
       <template #default>
-        <div class="flex flex-col items-center gap-6 mt-8 w-full">
+        <div class="flex flex-col items-center gap-2 md:gap-4 w-full">
           <HeadingTitle title="MÀU MỰC - MỸ PHẨM" />
           <HeadingTitle title="RÕ NGUỒN GỐC XUẤT XỨ ĐƯỢC BỘ Y TẾ KIỂM ĐỊNH" />
           <img
@@ -104,7 +116,7 @@
       :style="{
         backgroundImage: `url(${require('@/assets/imgs/Doi-ngu-nhan-vien-1-240x300-1.png.webp')})`,
       }"
-      class="relative bg-cover bg-no-repeat bg-center py-10 employee"
+      class="relative bg-cover bg-no-repeat bg-center py-6 md:py-10 employee"
     >
       <div class="flex flex-col justify-center items-center">
         <h1
@@ -148,7 +160,7 @@
             </SlickCarousel>
           </client-only>
           <div
-            class="flex md:flex-row flex-col items-stretch gap-4 container min-h-80"
+            class="flex md:flex-row flex-col items-stretch gap-2 md:gap-4 container min-h-80"
           >
             <div class="flex-1">
               <iframe
@@ -190,8 +202,6 @@
 
     <!-- Báo chí -->
     <NewsPress />
-
-    
   </div>
 </template>
 
@@ -288,7 +298,7 @@ export default {
         autoplay: false,
         autoplaySpeed: 2000,
       },
-     
+
       listEmployees: [
         {
           image: require("@/assets/imgs/nhanvien1.webp"),
@@ -305,7 +315,6 @@ export default {
         autoplay: true,
         autoplaySpeed: 2000,
       },
-  
     };
   },
 };
@@ -330,22 +339,26 @@ export default {
 .introview::before {
   top: -9%;
   transform: translateX(-50%) rotate(180deg);
+  background-position-x: center;
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 
 .introview::after {
   bottom: -9%;
+  background-position-x: center;
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 
 .employee::before {
   top: -5%;
   transform: translateX(-50%) rotate(180deg);
+  background-position-x: center;
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 
 .employee::after {
   bottom: -5%;
+  background-position-x: center;
   background-image: url("@/assets/imgs/pattern_new_1.png");
 }
 </style>

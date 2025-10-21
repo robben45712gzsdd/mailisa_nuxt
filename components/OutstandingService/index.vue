@@ -1,8 +1,8 @@
 <template>
-  <div class="mx-auto py-10 container">
+  <div class="mx-auto py-6 md:py-10 container">
     <HeadingTitle :title="title" />
 
-    <div v-aos="'fade-up'" data-aos-duration="1000" class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
+    <div v-aos="'fade-up'" data-aos-duration="1000" class="gap-2 md:gap-6 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mt-10">
       <BoxService v-for="(item, index) in data" :key="index" :title="item.title" :description="item.desc"
         :image="item.img" />
     </div>

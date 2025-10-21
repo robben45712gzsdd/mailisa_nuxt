@@ -2,13 +2,13 @@
   <div>
     <img :src="images.banerBacSiGiaLieu" alt="" />
 
-    <h2 class="font-starcity text-center text-primary text-[100px] mb-[-50px]">Phân biệt</h2>
+    <!-- <h2 class="font-starcity text-center text-primary text-[100px] mb-[-50px]">Phân biệt</h2> -->
     <!-- Dịch vụ nổi bật -->
     <OutstandingService title="CÁC LOẠI NÁM ĐINH MÀ KHÁCH THƯỜNG GẶP" :data="dataService" />
 
 
     <!-- nguyên nhân -->
-    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container hidden md:block" data-aos="fade-up" data-aos-duration="1000">
       <div class="flex justify-center items-center">
         <svg width="65" height="57" viewBox="0 0 65 57" class="w-25 h-25" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_500)">
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center gap-8 py-10">
+    <div data-aos="fade-up" data-aos-duration="1000" class="hidden md:blockflex justify-center gap-8 py-6 md:py-10">
       <div v-for="(item, index) in listIntroViews" :key="index"
         class="flex flex-col items-center text-center transition-transform duration-300"
         :style="{ transform: `translateY(${getTranslateY(index)}px)` }">
@@ -73,7 +73,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="hidden md:block">
       <div class="container" data-aos="fade-up" data-aos-duration="1000">
         <div class="flex items-center justify-center">
           <div class="">
@@ -95,7 +95,7 @@
     <div class="relative" :class="'bg-[url(' + images.tuvan1 + ')] bg-no-repeat bg-center bg-cover'">
       <div class="w-full">
         <div class="container">
-          <div class="flex items-center justify-center gap-6">
+          <div class="flex items-center justify-center gap-6 flex-col-reverse md:flex-row py-12">
             <div class="col-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="300" data-aos-duration="700">
               <div class="img_wrap">
                 <img :src="images.tuvan2" alt="" />
@@ -146,7 +146,7 @@
     <Docter />
 
 
-    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container my-12 hidden md:block" data-aos="fade-up" data-aos-duration="1000">
       <div class="flex justify-center items-center">
         <svg width="65" height="57" viewBox="0 0 65 57" class="w-25 h-25" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_500)">
@@ -213,7 +213,7 @@
       </div>
     </div>
 
-    <div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center gap-8 py-10">
+    <div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center gap-8 py-6 md:py-10">
       <div v-for="(item, index) in listImageAdvantage" :key="index"
         class="flex flex-col items-center text-center transition-transform duration-300"
         :style="{ transform: `translateY(${getTranslateYAdventage(index)}px)` }">
@@ -225,11 +225,11 @@
 
 
     <!-- Kết quả khách hàng -->
-    <div class="bg-cover bg-center bg-no-repeat w-full py-4 md:py-12" :style="{
+    <div class="bg-cover bg-center bg-no-repeat w-full py-4 md:py-6 md:py-12" :style="{
       backgroundImage: `url(${images.nhomSanPham})`,
       height: 'max-content',
     }">
-      <div class="mt-10 py-10 container">
+      <div class="mt-10 py-6 md:py-10 container">
         <div class="flex flex-col justify-center items-center gap-3">
           <img :src='require("@/assets/imgs/FIXWEB-57-e1708074408122.png")' alt="" />
           <h2 class="font-bold text-white text-2xl text-center">
@@ -286,7 +286,7 @@
       ]" :description="`Thẩm Mỹ Viện Mailisa Điều Trị Nám Đinh Cho Khách Hàng`" />
 
 
-    <div class="flex flex-col items-center gap-6 mt-8 w-full">
+    <div class="flex flex-col items-center gap-2 md:gap-4 w-full">
       <HeadingTitle title="MỸ PHẨM RÕ NGUỒN GỐC XUẤT XỨ ĐƯỢC BỘ Y TẾ KIỂM NGHIỆM" />
       <img data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" src="@/assets/imgs/ALL-DOCTOR-MAGIC-03.png"
         alt="Ảnh chứng nhận" />
@@ -479,13 +479,13 @@ export default {
         speed: 800,
         slidesToShow: 3,
         slidesToScroll: 1,
-        // autoplay: true,  
+        autoplay: true,  
         autoplaySpeed: 2500,
         arrows: false,
         dots: false,
         responsive: [
           { breakpoint: 1024, settings: { slidesToShow: 3 } },
-          { breakpoint: 768, settings: { slidesToShow: 1 } },
+          { breakpoint: 768, settings: { slidesToShow: 2 } },
           { breakpoint: 480, settings: { slidesToShow: 1 } },
         ],
       },

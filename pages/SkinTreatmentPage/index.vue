@@ -24,7 +24,7 @@
       ]"
     >
       <template #default>
-        <div class="flex flex-col items-center gap-6 mt-8 w-full">
+        <div class="flex flex-col items-center gap-2 md:gap-4 w-full">
           <HeadingTitle title="MÀU MỰC - MỸ PHẨM" />
           <HeadingTitle title="RÕ NGUỒN GỐC XUẤT XỨ ĐƯỢC BỘ Y TẾ KIỂM ĐỊNH" />
           <img
@@ -49,7 +49,7 @@
 
     <!-- Video & hình -->
     <div
-      class="container py-12"
+      class="container py-6 md:py-12"
       data-aos="zoom-in"
       data-aos-delay="300"
       data-aos-duration="700"
