@@ -2,15 +2,16 @@
   <div>
     <img :src="images.banerBacSiGiaLieu" alt="" />
 
-    <!-- <h2 class="font-starcity text-center text-primary text-[100px] mb-[-50px]">Phân biệt</h2> -->
+    <h2 class="font-starcity text-center text-primary text-[50px] mb-[-30px] pt-5">Phân biệt</h2>
     <!-- Dịch vụ nổi bật -->
     <OutstandingService title="CÁC LOẠI NÁM ĐINH MÀ KHÁCH THƯỜNG GẶP" :data="dataService" />
 
 
     <!-- nguyên nhân -->
-    <div class="container hidden md:block" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
       <div class="flex justify-center items-center">
-        <svg width="65" height="57" viewBox="0 0 65 57" class="w-25 h-25" xmlns="http://www.w3.org/2000/svg">
+        <svg width="65" height="57" viewBox="0 0 65 57" class="w-25 h-25 hidden md:block"
+          xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_500)">
             <path
               d="M39.6014 32.131C39.3882 31.8936 39.1749 31.6778 38.9403 31.6778C36.8078 29.5199 34.6753 27.2326 32.6493 24.7726C30.6687 22.3532 28.926 19.7442 27.4459 16.9826C26.5049 15.2257 25.7883 13.3549 25.3134 11.4152C24.8467 9.35308 24.9202 7.20339 25.5266 5.17886C26.0932 3.40438 27.2451 1.88075 28.7894 0.863072C29.6921 0.283781 30.7311 -0.0415801 31.7994 -0.0795088C32.8676 -0.117437 33.9266 0.13344 34.8672 0.647286C35.946 1.29971 36.8418 2.22092 37.4689 3.32307C38.3285 4.7348 38.8472 6.33164 38.983 7.98413C39.4308 10.6599 39.6441 13.3357 39.8573 16.0115C40.0706 19.3562 40.0706 22.4852 40.0706 25.8083C40.0706 27.362 39.8573 29.1531 39.8573 30.7068C39.7043 31.1664 39.6181 31.6462 39.6014 32.131Z"
@@ -38,7 +39,7 @@
           <h2 class="text-center text-primary-dark font-bold text-[30px]">
             KHIẾN BẠN TỰ TI</h2>
         </div>
-        <svg width="65" height="57" viewBox="0 0 65 57" class="[transform:rotateY(180deg)] w-25 h-25"
+        <svg width="65" height="57" viewBox="0 0 65 57" class="[transform:rotateY(180deg)] w-25 h-25 hidden md:block"
           xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_500)">
             <path
@@ -63,19 +64,21 @@
       </div>
     </div>
 
-    <div data-aos="fade-up" data-aos-duration="1000" class="hidden md:blockflex justify-center gap-8 py-6 md:py-10">
+    <div data-aos="fade-up" data-aos-duration="1000"
+      class="flex justify-center gap-8 py-6 md:py-10 flex-wrap lg:flex-nowrap">
       <div v-for="(item, index) in listIntroViews" :key="index"
-        class="flex flex-col items-center text-center transition-transform duration-300"
-        :style="{ transform: `translateY(${getTranslateY(index)}px)` }">
-        <div class="">
-          <img :src="item.img" class="" />
-        </div>
+        class="flex flex-col items-center text-center transition-transform duration-300" :class="{
+          // chỉ thêm translate khi màn hình lớn hơn md
+          [`lg:translate-y-[${getTranslateY(index)}px]`]: true
+        }">
+        <img :src="item.img" />
       </div>
     </div>
 
-    <div class="hidden md:block">
+
+    <div class="">
       <div class="container" data-aos="fade-up" data-aos-duration="1000">
-        <div class="flex items-center justify-center">
+        <div class="flex flex-col md:flex-row items-center justify-center">
           <div class="">
             <img :src='require("@/assets/imgs/Asset-4-2.png")' alt="">
           </div>
@@ -146,9 +149,10 @@
     <Docter />
 
 
-    <div class="container my-12 hidden md:block" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container my-12" data-aos="fade-up" data-aos-duration="1000">
       <div class="flex justify-center items-center">
-        <svg width="65" height="57" viewBox="0 0 65 57" class="w-25 h-25" xmlns="http://www.w3.org/2000/svg">
+        <svg width="65" height="57" viewBox="0 0 65 57" class="w-25 h-25 hidden md:block"
+          xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_500)">
             <path
               d="M39.6014 32.131C39.3882 31.8936 39.1749 31.6778 38.9403 31.6778C36.8078 29.5199 34.6753 27.2326 32.6493 24.7726C30.6687 22.3532 28.926 19.7442 27.4459 16.9826C26.5049 15.2257 25.7883 13.3549 25.3134 11.4152C24.8467 9.35308 24.9202 7.20339 25.5266 5.17886C26.0932 3.40438 27.2451 1.88075 28.7894 0.863072C29.6921 0.283781 30.7311 -0.0415801 31.7994 -0.0795088C32.8676 -0.117437 33.9266 0.13344 34.8672 0.647286C35.946 1.29971 36.8418 2.22092 37.4689 3.32307C38.3285 4.7348 38.8472 6.33164 38.983 7.98413C39.4308 10.6599 39.6441 13.3357 39.8573 16.0115C40.0706 19.3562 40.0706 22.4852 40.0706 25.8083C40.0706 27.362 39.8573 29.1531 39.8573 30.7068C39.7043 31.1664 39.6181 31.6462 39.6014 32.131Z"
@@ -170,17 +174,17 @@
           </defs>
         </svg>
         <div class="flex flex-row items-center px-10">
-          <img :src='require("@/assets/imgs/Asset-11.png")' alt="" />
+          <img class="hidden md:block" :src='require("@/assets/imgs/Asset-11.png")' alt="" />
 
           <div>
-            <h2 class="font-starcity text-center text-primary-dark font-bold text-[100px]">Ưu điểm</h2>
+            <h2 class="font-starcity text-center text-primary-dark font-bold text-[30px]">Ưu điểm</h2>
             <h2 class="text-center text-primary-dark font-bold text-[30px]">ĐIỀU TRỊ NÁM ĐINH TẠI MAILISA
             </h2>
             <h2 class="text-center text-primary-dark font-bold text-[30px]">
               MÀ KHÁCH HÀNG YÊU THÍCH</h2>
           </div>
         </div>
-        <svg width="65" height="57" viewBox="0 0 65 57" class="[transform:rotateY(180deg)] w-25 h-25"
+        <svg width="65" height="57" viewBox="0 0 65 57" class="[transform:rotateY(180deg)] w-25 h-25 hidden md:block"
           xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_500)">
             <path
@@ -213,17 +217,16 @@
       </div>
     </div>
 
-    <div data-aos="fade-up" data-aos-duration="1000" class="flex justify-center gap-8 py-6 md:py-10">
+    <div data-aos="fade-up" data-aos-duration="1000"
+      class="flex justify-center gap-8 py-6 md:py-10 flex-wrap lg:flex-nowrap">
       <div v-for="(item, index) in listImageAdvantage" :key="index"
-        class="flex flex-col items-center text-center transition-transform duration-300"
-        :style="{ transform: `translateY(${getTranslateYAdventage(index)}px)` }">
-        <div class="">
-          <img :src="item.img" class="" />
-        </div>
+        class="flex flex-col items-center text-center transition-transform duration-300" :class="{
+          // chỉ thêm translate khi màn hình lớn hơn md
+          [`lg:translate-y-[${getTranslateYAdventage(index)}px]`]: true
+        }">
+        <img :src="item.img" />
       </div>
     </div>
-
-
     <!-- Kết quả khách hàng -->
     <div class="bg-cover bg-center bg-no-repeat w-full py-4 md:py-6 md:py-12" :style="{
       backgroundImage: `url(${images.nhomSanPham})`,
@@ -286,7 +289,7 @@
       ]" :description="`Thẩm Mỹ Viện Mailisa Điều Trị Nám Đinh Cho Khách Hàng`" />
 
 
-    <div class="flex flex-col items-center gap-2 md:gap-4 w-full">
+    <div class="flex flex-col items-center gap-2 py-5 md:gap-4 w-full">
       <HeadingTitle title="MỸ PHẨM RÕ NGUỒN GỐC XUẤT XỨ ĐƯỢC BỘ Y TẾ KIỂM NGHIỆM" />
       <img data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" src="@/assets/imgs/ALL-DOCTOR-MAGIC-03.png"
         alt="Ảnh chứng nhận" />
@@ -479,7 +482,7 @@ export default {
         speed: 800,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,  
+        autoplay: true,
         autoplaySpeed: 2500,
         arrows: false,
         dots: false,
