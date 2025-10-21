@@ -17,7 +17,7 @@
       "
     >
       <div class="relative w-full design-pattern-bg">
-        <div class="container">
+        <div class="container py-12">
           <div class="flex justify-center items-center gap-6">
             <div
               class="col-6 aos-init aos-animate"
